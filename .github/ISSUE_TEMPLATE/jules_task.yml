@@ -1,0 +1,58 @@
+name: Jules task
+about: Create a scoped task for Jules to implement through a reviewable PR
+title: "[Jules Task] "
+labels: ["jules", "task"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem should this task solve?
+      placeholder: Describe the concrete problem or gap.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What should change?
+      placeholder: List the files, docs, behavior, or templates that are in scope.
+    validations:
+      required: true
+  - type: textarea
+    id: non_scope
+    attributes:
+      label: Non-goals
+      description: What should Jules avoid changing?
+      placeholder: List unrelated areas, refactors, or decisions that are out of scope.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know the task is complete?
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: What tests, checks, or manual review steps should be used?
+      placeholder: Describe CI, tests, docs preview, or manual verification.
+    validations:
+      required: true
+  - type: dropdown
+    id: workflow_level
+    attributes:
+      label: Workflow Level
+      options:
+        - Level 1 - Human-led Jules workflow
+        - Level 2 - Semi-autonomous Jules workflow
+        - Level 3 - Human issue only
+        - Level 4 - Daily agentic maintainer loop
+    validations:
+      required: true
