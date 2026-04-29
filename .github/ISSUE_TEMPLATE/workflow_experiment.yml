@@ -1,0 +1,43 @@
+name: Workflow experiment
+about: Propose an advanced or experimental Jules workflow
+title: "[Experiment] "
+labels: ["experiment", "workflow"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template only for advanced or experimental automation. No-human workflows and evaluator-driven evolution must run in sandbox repos or protected branches.
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      description: What workflow are we testing, and why might it be useful?
+    validations:
+      required: true
+  - type: dropdown
+    id: experiment_type
+    attributes:
+      label: Experiment Type
+      options:
+        - No-human sandbox workflow
+        - Daily agentic maintainer loop
+        - Human-minimal auto-merge workflow
+        - Jules + evaluator-driven evolution
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety Boundaries
+      description: What prevents unsafe or unreviewed changes?
+      placeholder: Branch protection, CI gates, sandbox repo, no production secrets, manual audit, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: success
+    attributes:
+      label: Success Criteria
+      description: What measurable result would make this experiment useful?
+    validations:
+      required: true

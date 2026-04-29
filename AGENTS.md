@@ -1,23 +1,73 @@
 # AGENTS.md
 
-This repository uses Jules as an AI coding agent, not a human contributor. The following rules define how Jules operates within this project to ensure a maintainable, GitHub-native workflow.
+This repository is an AI Coding Workflow Starter Kit for Jules. It uses Jules as an AI coding agent inside a GitHub-native maintainer workflow.
 
-## Operating Rules
+Jules is not presented as a human contributor. The maintainer owns direction, architecture, review, and merge decisions unless a document is explicitly marked as an experiment.
 
-Jules must adhere to the following guidelines:
+## Default Operating Model
 
-- **Jules is an AI Coding Agent:** Do not present Jules as a human contributor.
-- **Issue-Driven Development:** All work must originate from a GitHub Issue.
-- **Small, Focused Pull Requests:** Create pull requests that are small and strictly scoped to the issue.
-- **Link PRs to Issues:** Ensure each pull request links back to the originating issue.
-- **No Unrelated Refactors:** Do not perform refactors that are unrelated to the current task.
-- **Stay in Scope:** Do not modify files outside the scope of the issue.
-- **Include Validation:** Include tests or validation steps when applicable to verify changes.
-- **Clear PR Summaries:** Keep the PR description concise and reviewable.
-- **Handle Ambiguity Safely:** If the issue is ambiguous, make the smallest safe change and explicitly state the assumption in the PR description.
-- **No Self-Merging:** Jules must not merge pull requests. Human maintainer review and approval are strictly required before merging.
-- **Investigate CI Failures:** If Continuous Integration (CI) checks fail, Jules should investigate and address the root cause, not ignore it.
+The recommended default workflow is:
 
-## Philosophy
+```text
+Issue → Jules task → Pull request → CI → Human review → Merge
+```
 
-This repository is built around the idea that a human maintainer leads an AI coding agent through GitHub-native engineering practices. The history of the project—Issue → Action Run → PR → Review → CI → Merge—should be readable, reviewable, and reusable.
+All production-oriented work should follow this model.
+
+## Rules for Jules
+
+- Treat the GitHub Issue as the source of truth.
+- Create small, focused pull requests.
+- Link each PR to the originating issue.
+- Do not modify unrelated files.
+- Do not perform opportunistic refactors.
+- State assumptions clearly when the issue is ambiguous.
+- Include validation steps in the PR description.
+- Respect CI failures and investigate root causes.
+- Do not claim human authorship or human identity.
+- Do not self-merge in the default workflow.
+
+## Workflow Levels
+
+This repository documents multiple workflow levels:
+
+1. Human-led Jules workflow: recommended default.
+2. Semi-autonomous Jules workflow: Jules may fix CI/review feedback, human still merges.
+3. Human issue only: maintainer writes issue, Jules handles implementation and PR updates under strict CI.
+4. Daily agentic maintainer loop: Jules reports project state, human steers direction.
+5. No-human sandbox workflow: experiment only.
+6. Jules + evaluator-driven evolution: experiment only.
+
+Levels 1-4 may be documented as practical workflows. Levels 5-6 must be labeled as experiments and must not be presented as the default recommendation.
+
+## Safety Rules for Experiments
+
+Experimental automation must follow these rules:
+
+- Use sandbox repositories or protected experiment branches.
+- Require CI gates before any merge.
+- Prefer auto-merge only when branch protection is configured.
+- Keep logs, prompts, and evaluation results visible.
+- Never hide that an AI coding agent performed the work.
+- Do not present autonomous workflows as safer than human-reviewed workflows.
+
+## Review Expectations
+
+A reviewable Jules PR should answer:
+
+```text
+What issue does this solve?
+What changed?
+What did not change?
+How was it validated?
+What assumptions were made?
+What should the human maintainer inspect carefully?
+```
+
+If the PR cannot answer those questions, it is not ready to merge.
+
+## Project Philosophy
+
+Most AI coding demos show only the final code. This repository shows the process.
+
+The goal is not to prove that AI can replace maintainers. The goal is to show how a human maintainer can lead an AI coding agent through issues, PRs, reviews, CI, and controlled automation.
