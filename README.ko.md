@@ -5,174 +5,124 @@
 > 대부분의 AI 코딩 데모는 완성된 코드만 보여줍니다.  
 > 이 프로젝트는 그 과정 자체를 보여줍니다.
 
-**Vibe Coding with Jules**는 **Jules**, 즉 AI coding agent를 실제 소프트웨어 프로젝트에서 GitHub 방식으로 운영하기 위한 workflow kit입니다.
+**Vibe Coding with Jules**는 **Jules**, 즉 AI coding agent를 실제 GitHub Issue → PR → Review → CI 흐름 안에서 운영하기 위한 GitHub-native workflow kit입니다.
 
 이 저장소는 단순한 프롬프트 모음이 아닙니다.
 
-AI-assisted development를 다음 흐름으로 운영하기 위한 실전형 템플릿 저장소입니다.
+이 프로젝트는 human maintainer가 AI coding agent를 오픈소스 협업의 기본 단위로 리드하는 방식을 보여주기 위해 설계되었습니다.
 
 - GitHub Issues
-- 명확하게 범위가 잡힌 구현 태스크
+- GitHub Actions
+- 범위가 명확한 AI coding task
 - Pull Requests
-- Human review
+- Human code review
 - CI checks
 - 실제 case study 문서화
 
-목표는 단순합니다.
-
-> AI coding work를 마법처럼 포장하지 않고, 유지보수 가능한 오픈소스 엔지니어링처럼 다루는 것.
+Repository:  
+<https://github.com/hkimw-underground/vibe-coding-with-jules>
 
 ---
 
 ## Overview
 
-AI coding agent는 경계가 명확할수록 더 잘 작동합니다.
+많은 AI coding workflow는 개발 history 밖에서 일어납니다.
 
-이 저장소는 maintainer가 Jules를 명확한 개발 workflow 안에서 활용할 수 있도록 재사용 가능한 구조를 제공합니다.
+어딘가에 prompt를 씁니다.  
+AI tool이 코드를 만듭니다.  
+결과만 commit됩니다.  
+과정은 사라집니다.
 
-AI agent에게 “프로젝트를 알아서 만들어줘”라고 맡기는 대신, 이 workflow는 다음 방식을 권장합니다.
+이 저장소는 다른 접근을 합니다.
 
-1. GitHub Issue로 문제를 정의합니다.
-2. 구현 범위를 작은 task로 나눕니다.
-3. Jules가 focused pull request를 만들도록 합니다.
-4. Human maintainer가 PR을 리뷰합니다.
-5. CI로 회귀와 기본 품질 문제를 잡습니다.
-6. 무엇이 왜 바뀌었는지 기록합니다.
+의도한 workflow는 다음과 같습니다.
 
-이 저장소는 다른 GitHub 프로젝트에 그대로 복사하고, 수정하고, 재사용할 수 있도록 설계되어 있습니다.
+```text
+Human Maintainer가 GitHub Issue를 작성
+        ↓
+GitHub Actions가 Jules를 trigger
+        ↓
+Jules가 focused pull request 생성
+        ↓
+Human Maintainer가 PR review
+        ↓
+CI가 변경 사항 검증
+        ↓
+Maintainer가 merge 또는 수정 요청
+```
+
+Jules는 **AI coding agent**로 사용됩니다.
+
+Jules를 maintainer의 대체자로 숨기는 것이 아닙니다.
+
+scope, architecture, review, final merge decision은 human maintainer가 책임집니다.
 
 ---
 
 ## Why
 
-대부분의 AI 코딩 예시는 멋지게 정리된 before-and-after 데모처럼 보입니다.
+대부분의 AI 코딩 데모는 정리된 before-and-after 결과만 보여줍니다.
 
-하지만 실제 엔지니어링에서 중요한 부분은 그 사이에 있습니다.
+하지만 실제 엔지니어링에서 중요한 질문은 그 사이에 있습니다.
 
-- 작업은 어떻게 정의되었는가?
-- 어떤 제약 조건이 있었는가?
-- AI agent의 결과물은 어떻게 리뷰되었는가?
-- CI는 무엇을 잡았는가?
-- Human maintainer는 무엇을 거절하거나 수정했는가?
-- GitHub history는 나중에 봐도 이해 가능한가?
+- AI agent에게 어떤 issue를 해결하라고 했는가?
+- 어떤 제약 조건을 주었는가?
+- 어떤 파일이 scope 안에 있었는가?
+- human maintainer는 무엇을 review했는가?
+- CI는 무엇을 검증했는가?
+- 첫 PR과 최종 merge 사이에 무엇이 바뀌었는가?
+- 나중에 다른 개발자가 이 history를 이해할 수 있는가?
 
 이 프로젝트가 존재하는 이유는 process가 중요하기 때문입니다.
 
-좋은 AI-assisted workflow는 다른 개발자가 이해할 수 있는 GitHub history를 남겨야 합니다.
+좋은 AI-assisted workflow는 읽을 수 있고, 리뷰할 수 있고, 재사용할 수 있는 GitHub history를 남겨야 합니다.
 
 ---
 
 ## Workflow
 
-권장 workflow는 다음과 같습니다.
+이 저장소는 **Jules를 위한 IssueOps**를 중심으로 설계됩니다.
+
+매 task마다 Jules web UI에 직접 들어가는 대신, 권장 workflow는 다음과 같습니다.
 
 ```text
-Human Maintainer
-      ↓
-GitHub Issue
-      ↓
-Jules Task Prompt
-      ↓
-Implementation Branch
-      ↓
-Pull Request
-      ↓
-Human Review
-      ↓
-CI / Tests
-      ↓
-Merge or Request Changes
+1. 범위가 명확한 GitHub Issue를 작성합니다.
+2. `run-jules` 같은 명시적인 trigger label을 붙입니다.
+3. GitHub Actions가 Issue를 기반으로 Jules task를 만듭니다.
+4. Jules가 repository에서 작업하고 PR을 엽니다.
+5. Maintainer가 일반 contribution처럼 PR을 review합니다.
+6. CI가 통과해야 merge합니다.
 ```
 
-### 1. Issue에서 시작하기
+### Recommended IssueOps Flow
 
-의미 있는 작업은 GitHub Issue에서 시작해야 합니다.
+```text
+Issue
+  ↓
+Label: run-jules
+  ↓
+GitHub Actions
+  ↓
+Jules Session
+  ↓
+Pull Request
+  ↓
+Human Review
+  ↓
+CI
+  ↓
+Merge
+```
 
-좋은 issue에는 다음 내용이 들어갑니다.
+이 방식은 project history를 GitHub 안에 남깁니다.
 
-- problem statement
-- expected behavior
-- constraints
-- non-goals
-- acceptance criteria
-- testing expectations
-
-Jules에게 product direction을 추측하게 만들면 안 됩니다.
-
-의도와 방향은 human maintainer가 책임집니다.
-
----
-
-### 2. Issue를 Jules Task로 변환하기
-
-Jules prompt는 구체적이고, 범위가 작고, 리뷰 가능해야 합니다.
-
-좋은 Jules task에는 보통 다음 내용이 들어갑니다.
-
-- repository context
-- target files or modules
-- exact implementation goal
-- constraints
-- test command
-- expected PR summary
-- what not to touch
-
-목표는 Jules를 “창의적으로” 만드는 것이 아닙니다.
-
-목표는 Jules를 유용하게 만드는 것입니다.
-
----
-
-### 3. Pull Request는 작게 유지하기
-
-작은 PR일수록 AI-generated change를 리뷰하기 쉽습니다.
-
-권장 PR 크기:
-
-- one issue
-- one responsibility
-- one reviewable change
-- tests included when possible
-
-“AI가 전체를 리팩터링한 거대한 PR”은 피하는 것이 좋습니다.
-
----
-
-### 4. Jules는 Coding Agent로 리뷰하기
-
-Jules는 AI coding agent이지, 인간 팀원이 아닙니다.
-
-따라서 다음 원칙을 지켜야 합니다.
-
-- Jules가 스스로 아키텍처 결정을 내린 것처럼 포장하지 않습니다.
-- human review 없이 merge하지 않습니다.
-- 동작한다는 이유만으로 불명확한 코드를 받아들이지 않습니다.
-- generated change가 프로젝트 기준을 우회하게 두지 않습니다.
-
-정확성, 아키텍처, 유지보수성의 최종 책임은 human maintainer에게 있습니다.
-
----
-
-### 5. CI를 Gate로 사용하기
-
-CI는 지루하지만 중요한 부분을 검증해야 합니다.
-
-- formatting
-- linting
-- tests
-- type checks
-- build checks
-- documentation checks, when applicable
-
-깔끔한 CI pipeline은 AI-assisted development를 더 안전하고 반복 가능하게 만듭니다.
+Jules web interface는 초기 setup, account connection, API key 관리에는 사용할 수 있습니다. 그 이후 목표는 GitHub Issues, PRs, Reviews, Actions 중심으로 운영하는 것입니다.
 
 ---
 
 ## What’s Included
 
-이 저장소는 GitHub-native Jules workflow를 위한 starter kit를 목표로 합니다.
-
-계획된 구조는 다음과 같습니다.
+계획된 repository structure는 다음과 같습니다.
 
 ```text
 .
@@ -185,12 +135,14 @@ CI는 지루하지만 중요한 부분을 검증해야 합니다.
 │   │   ├── feature_request.yml
 │   │   ├── jules_task.yml
 │   │   └── documentation_task.yml
-│   ├── pull_request_template.md
-│   └── workflows/
-│       ├── ci.yml
-│       └── markdown-check.yml
+│   ├── workflows/
+│   │   ├── jules-issueops.yml
+│   │   ├── ci.yml
+│   │   └── markdown-check.yml
+│   └── pull_request_template.md
 ├── docs/
 │   ├── workflow.md
+│   ├── issueops.md
 │   ├── review-guide.md
 │   ├── prompt-patterns.md
 │   ├── anti-patterns.md
@@ -204,16 +156,16 @@ CI는 지루하지만 중요한 부분을 검증해야 합니다.
 │   ├── review-fix-task.md
 │   └── ci-failure-investigation.md
 └── examples/
-    ├── good-issues/
-    ├── good-prs/
-    └── review-comments/
+    ├── issues/
+    ├── prs/
+    └── reviews/
 ```
 
 ---
 
 ## Case Studies
 
-이 프로젝트는 Jules 기반 개발 workflow의 실제 예시를 문서화합니다.
+이 저장소는 Jules 기반 실제 workflow를 문서화합니다.
 
 ### Case Study A: Digital Logic Circuit
 
@@ -224,17 +176,16 @@ Repository:
 
 초점은 최종 코드만이 아닙니다.
 
-이 case study는 다음 내용을 보여줍니다.
+이 case study는 다음을 보여줍니다.
 
 - issue-driven planning
 - hardware/software constraints
 - Jules implementation tasks
 - human maintainer review
+- CI and validation expectations
 - project history as documentation
 
-이 workflow에서 Jules는 AI coding agent로 사용됩니다.
-
-아키텍처, 하드웨어 판단, 최종 리뷰의 책임은 human maintainer에게 있습니다.
+이 workflow에서 Jules는 AI coding agent입니다. architecture, hardware decision, scope control, final review는 human maintainer가 책임집니다.
 
 ---
 
@@ -242,12 +193,13 @@ Repository:
 
 Status: planned.
 
-이 case study는 글로벌 독자를 대상으로 하는 순수 영어 오픈소스 프로젝트로 만들 예정입니다.
+이 case study는 글로벌 독자를 위한 순수 영어 오픈소스 프로젝트로 만들 예정입니다.
 
 보여줄 내용은 다음과 같습니다.
 
 - small issues
-- focused Jules tasks
+- automated Jules task triggering
+- focused pull requests
 - clean PR descriptions
 - CI-first development
 - readable review comments
@@ -259,21 +211,13 @@ Status: planned.
 
 ## Templates
 
-이 저장소는 AI-assisted development에서 자주 쓰이는 템플릿을 제공합니다.
+이 저장소는 반복 가능한 AI-assisted development를 위한 template을 제공합니다.
 
 ### Issue Templates
 
-Issue template은 human과 AI coding agent 모두가 이해할 수 있는 task를 작성하도록 돕습니다.
+Issue template은 AI coding agent가 시작하기 전에 maintainer가 작업을 명확하게 정의하도록 돕습니다.
 
-예시:
-
-- bug report
-- feature request
-- Jules task
-- documentation task
-- refactor task
-
-각 issue는 다음 질문에 답해야 합니다.
+좋은 issue는 다음 질문에 답해야 합니다.
 
 ```text
 What problem are we solving?
@@ -282,32 +226,28 @@ What should not change?
 How do we verify the result?
 ```
 
----
-
 ### Pull Request Template
 
-PR template은 AI-generated change를 더 쉽게 리뷰할 수 있도록 설계됩니다.
+PR template은 AI-generated change를 더 쉽게 review할 수 있도록 설계됩니다.
 
-좋은 PR에는 다음 내용이 들어갑니다.
+좋은 PR에는 다음이 포함되어야 합니다.
 
 - linked issue
 - summary of changes
-- test results
+- validation steps
 - screenshots or logs when useful
 - known limitations
 - reviewer checklist
 
 PR은 변경 사항을 담는 것에서 끝나면 안 됩니다.
 
-왜 바뀌었는지 설명해야 합니다.
-
----
+변경 이유와 검증 방법을 설명해야 합니다.
 
 ### Jules Task Prompts
 
-Prompt template은 반복 가능한 task handoff를 위해 제공됩니다.
+Prompt template은 반복 가능한 task handoff를 위해 포함됩니다.
 
-예시 prompt category:
+예시 category:
 
 - implement from issue
 - fix review comments
@@ -316,15 +256,13 @@ Prompt template은 반복 가능한 task handoff를 위해 제공됩니다.
 - update documentation
 - investigate CI failure
 
-이 prompt들은 engineering judgment를 대체하지 않습니다.
+Issue는 source of truth로 남아야 합니다.
 
-task delegation을 더 일관되게 만들기 위한 도구입니다.
+Prompt는 scoped issue를 reviewable PR로 바꾸는 데 도움을 주는 도구이지, engineering judgment를 대체하는 도구가 아닙니다.
 
 ---
 
 ## Philosophy
-
-이 프로젝트는 몇 가지 원칙을 중심으로 설계되었습니다.
 
 ### Human Maintainer Leads
 
@@ -335,39 +273,34 @@ Maintainer가 책임지는 것:
 - scope
 - tradeoffs
 - final review
+- merge decisions
 
 Jules는 구현하고, 수정하고, 보조할 수 있습니다.
 
 하지만 Jules가 조용히 프로젝트 방향을 정하게 두면 안 됩니다.
-
----
 
 ### AI Work Should Be Reviewable
 
 AI-generated code는 명확한 흔적을 남겨야 합니다.
 
 ```text
-Issue → Task Prompt → PR → Review → CI → Merge
+Issue → Action Run → PR → Review → CI → Merge
 ```
 
 history가 이해하기 어렵다면 workflow가 실패한 것입니다.
 
----
-
 ### Small PRs Beat Big Magic
 
-큰 AI-generated PR은 리뷰하기 어렵습니다.
+큰 AI-generated PR은 review하기 어렵습니다.
 
 이 workflow는 다음을 선호합니다.
 
 - small changes
 - clear acceptance criteria
 - testable outputs
-- reviewable commits
+- reviewable diffs
 
 목표는 화려한 데모가 아니라 유지보수성입니다.
-
----
 
 ### CI Is Part of the Workflow
 
@@ -375,13 +308,11 @@ CI는 선택 장식이 아닙니다.
 
 AI-assisted change가 검증되지 않은 추측이 되지 않도록 막는 safety layer입니다.
 
----
-
 ### Do Not Pretend the AI Is Human
 
 Jules는 AI coding agent입니다.
 
-이 저장소는 Jules를 인간 contributor처럼 포장하는 표현을 피합니다.
+이 저장소는 Jules를 human contributor처럼 포장하는 표현을 피합니다.
 
 이 프로젝트가 전달하려는 메시지는 다음입니다.
 
@@ -395,87 +326,72 @@ Jules는 AI coding agent입니다.
 
 ## Getting Started
 
-### 1. Repository Structure 복사하기
+### 1. Repository를 Starter Kit으로 사용하기
 
-이 저장소를 자신의 프로젝트 starter kit으로 사용할 수 있습니다.
-
-복사할 수 있는 항목:
+필요한 부분을 복사해서 사용할 수 있습니다.
 
 - `AGENTS.md`
 - `.github/ISSUE_TEMPLATE`
+- `.github/workflows/jules-issueops.yml`
 - `.github/pull_request_template.md`
-- `.github/workflows`
 - `docs/`
 - `prompts/`
 
----
+### 2. Jules를 한 번만 연결하기
 
-### 2. 첫 Issue 만들기
+초기 setup에서는 Jules web app에서 GitHub repository 연결과 API key 발급이 필요할 수 있습니다.
 
-작고 구체적인 task부터 시작하세요.
+setup 이후에는 GitHub Issues, Actions, PRs, Reviews 중심으로 운영하는 것이 목표입니다.
 
-좋은 첫 task 예시:
+### 3. Jules API Key를 GitHub Secrets에 추가하기
 
-- add a missing test
-- improve README setup instructions
-- fix one bug
-- add one small feature
-- refactor one module
+API key는 repository secret으로 저장합니다.
 
-다음과 같은 모호한 issue는 피하는 것이 좋습니다.
+```text
+JULES_API_KEY
+```
+
+API key를 repository에 commit하면 안 됩니다.
+
+### 4. 범위가 명확한 Issue 만들기
+
+작고 구체적인 task부터 시작합니다.
+
+좋은 예시:
+
+```text
+Add AGENTS.md for Jules workflow rules.
+Add markdown documentation CI.
+Add a pull request template for AI-assisted contributions.
+```
+
+다음처럼 모호한 task는 피합니다.
 
 ```text
 Make this project better.
 ```
 
-대신 이렇게 쓰는 것이 좋습니다.
+### 5. GitHub에서 Jules Trigger하기
+
+trigger label을 추가합니다.
 
 ```text
-Add a CI workflow that runs tests on every pull request.
+run-jules
 ```
 
----
+그러면 GitHub Actions가 Jules를 호출하고, 해당 issue를 해결하는 focused PR 생성을 요청합니다.
 
-### 3. Jules Task Prompt 작성하기
-
-Issue를 source of truth로 사용합니다.
-
-좋은 task prompt에는 다음 내용이 들어갑니다.
-
-```text
-Repository context:
-Task:
-Files to inspect:
-Constraints:
-Acceptance criteria:
-Test command:
-Expected PR description:
-Do not touch:
-```
-
----
-
-### 4. Pull Request 리뷰하기
+### 6. Merge 전에 Review하기
 
 Merge 전에 다음을 확인합니다.
 
 - PR이 issue를 해결하는가?
 - scope가 통제되어 있는가?
 - 관련 없는 파일이 바뀌지 않았는가?
-- test가 포함되었거나 업데이트되었는가?
+- tests 또는 validation steps가 있는가?
 - CI가 통과하는가?
 - 구현이 유지보수 가능한가?
 - 나중에 다른 개발자가 이 history를 이해할 수 있는가?
-
----
-
-### 5. 결과 문서화하기
-
-PR이 merge된 뒤에도 issue와 PR history는 개발 과정을 설명해야 합니다.
-
-그 history 자체가 프로젝트의 일부입니다.
-
-AI-assisted development에서는 process가 portfolio입니다.
 
 ---
 
@@ -484,9 +400,9 @@ AI-assisted development에서는 process가 portfolio입니다.
 이 저장소는 다음 사람들을 위한 것입니다.
 
 - AI coding agent를 실험하는 open-source maintainer
-- GitHub로 capstone project를 운영하려는 학생
-- 더 깔끔한 AI-assisted workflow를 원하는 개발자
-- prompt-to-PR workflow를 반복 가능하게 만들고 싶은 팀
+- GitHub-native AI workflow를 원하는 개발자
+- GitHub Issue와 PR로 capstone project를 운영하려는 학생
+- IssueOps 기반 AI task delegation을 반복 가능하게 만들고 싶은 팀
 - AI coding work를 reviewable하게 만들고 싶은 사람
 
 ---
@@ -495,15 +411,21 @@ AI-assisted development에서는 process가 portfolio입니다.
 
 이 저장소는 reusable workflow template이자 public playbook으로 구축 중입니다.
 
-초기 초점은 documentation, templates, case studies입니다.
+초기 초점은 다음입니다.
+
+- README
+- AGENTS.md
+- GitHub Issue templates
+- Jules IssueOps workflow
+- PR template
+- CI examples
+- case study documentation
 
 ---
 
 ## License
 
-재사용 목적에 맞는 license를 선택하세요.
-
-이런 유형의 저장소에 추천되는 license:
+추천 license:
 
 - MIT License: 넓은 재사용에 적합
 - Apache-2.0: patent language가 필요한 경우
@@ -513,12 +435,13 @@ AI-assisted development에서는 process가 portfolio입니다.
 
 ## Core Message
 
-대부분의 AI 코딩 데모는 완성된 코드만 보여줍니다.
+대부분의 AI coding demo는 완성된 코드만 보여줍니다.
 
 이 프로젝트는 과정을 보여줍니다.
 
 ```text
 Issue.
+Action run.
 Prompt.
 Pull request.
 Review.
