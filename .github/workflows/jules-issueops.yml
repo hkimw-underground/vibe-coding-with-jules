@@ -2,129 +2,57 @@ name: Jules IssueOps
 
 on:
   issues:
-    types:
-      - labeled
-  workflow_dispatch:
-    inputs:
-      issue_number:
-        description: "GitHub issue number to send to Jules"
-        required: true
-        type: string
+    types: [labeled]
 
 permissions:
   contents: read
-  issues: write
+  issues: read
 
 jobs:
   invoke-jules:
     name: Invoke Jules from GitHub Issue
     runs-on: ubuntu-latest
 
-    if: >
-      github.event_name == 'workflow_dispatch' ||
-      (
-        github.event_name == 'issues' &&
-        github.event.label.name == 'run-jules' &&
-        contains(fromJSON(vars.JULES_TRUSTED_USERS), github.event.issue.user.login)
-      )
+    # Only run when the explicit trigger label is added.
+    if: github.event.label.name == 'run-jules'
 
     steps:
-      - name: Build Jules prompt from issue
-        id: prompt
-        env:
-          GH_TOKEN: ${{ github.token }}
-          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
-          REPOSITORY: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-
-          issue_json="$(gh issue view "$ISSUE_NUMBER" \
-            --repo "$REPOSITORY" \
-            --json number,title,body,url,author,labels)"
-
-          number="$(echo "$issue_json" | jq -r '.number')"
-          title="$(echo "$issue_json" | jq -r '.title')"
-          body="$(echo "$issue_json" | jq -r '.body')"
-          url="$(echo "$issue_json" | jq -r '.url')"
-          author="$(echo "$issue_json" | jq -r '.author.login')"
-          labels="$(echo "$issue_json" | jq -r '[.labels[].name] | join(", ")')"
-
-          cat > prompt.md <<PROMPT
-          Implement the following GitHub Issue as a small, focused pull request.
-
-          Repository:
-          $REPOSITORY
-
-          Issue:
-          #$number - $title
-
-          Issue URL:
-          $url
-
-          Issue author:
-          $author
-
-          Issue labels:
-          $labels
-
-          Source of truth:
-          Use the GitHub Issue below as the source of truth. Do not expand the scope beyond the issue.
-
-          Issue body:
-          $body
-
-          Operating rules:
-          - Jules is an AI coding agent, not a human contributor.
-          - Create a small, focused pull request.
-          - Link the pull request back to the issue.
-          - Do not perform unrelated refactors.
-          - Do not modify files outside the issue scope.
-          - Include tests or validation steps when applicable.
-          - Keep the PR description concise and reviewable.
-          - If the issue is ambiguous, make the smallest safe change and explain the assumption in the PR description.
-          - Do not merge anything. Human maintainer review is required.
-          PROMPT
-
-          {
-            echo "prompt<<EOF"
-            cat prompt.md
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
-
-      - name: Mark issue as queued
-        env:
-          GH_TOKEN: ${{ github.token }}
-          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
-          REPOSITORY: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-
-          gh issue comment "$ISSUE_NUMBER" \
-            --repo "$REPOSITORY" \
-            --body "Jules has been queued from GitHub Actions.
-
-          Workflow run:
-          $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-
-          gh issue edit "$ISSUE_NUMBER" \
-            --repo "$REPOSITORY" \
-            --add-label "jules-queued" || true
-
       - name: Invoke Jules
+        # SECURITY: only trusted maintainers can trigger Jules from issues.
+        if: ${{ contains(fromJSON(vars.JULES_TRUSTED_USERS), github.event.issue.user.login) }}
         uses: google-labs-code/jules-invoke@v1
         with:
-          prompt: ${{ steps.prompt.outputs.prompt }}
+          jules_api_key: ${{ secrets.JULES_API_KEY }}
           starting_branch: main
           include_commit_log: true
-          jules_api_key: ${{ secrets.JULES_API_KEY }}
+          prompt: |
+            Implement the following GitHub Issue as a small, focused pull request.
 
-      - name: Remove trigger label
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
-          REPOSITORY: ${{ github.repository }}
-        run: |
-          gh issue edit "$ISSUE_NUMBER" \
-            --repo "$REPOSITORY" \
-            --remove-label "run-jules" || true
+            Repository:
+            ${{ github.repository }}
+
+            Issue:
+            #${{ github.event.issue.number }} - ${{ github.event.issue.title }}
+
+            Issue URL:
+            ${{ github.event.issue.html_url }}
+
+            Issue author:
+            ${{ github.event.issue.user.login }}
+
+            Source of truth:
+            Use the GitHub Issue below as the source of truth. Do not expand the scope beyond the issue.
+
+            Issue body:
+            ${{ github.event.issue.body }}
+
+            Operating rules:
+            - Jules is an AI coding agent, not a human contributor.
+            - Create a small, focused pull request.
+            - Link the pull request back to the issue.
+            - Do not perform unrelated refactors.
+            - Do not modify files outside the issue scope.
+            - Include tests or validation steps when applicable.
+            - Keep the PR description concise and reviewable.
+            - If the issue is ambiguous, make the smallest safe change and explain the assumption in the PR description.
+            - Do not merge anything. Human maintainer review is required.
