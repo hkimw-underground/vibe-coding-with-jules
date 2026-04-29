@@ -1,6 +1,6 @@
 name: Workflow experiment
 about: Propose an advanced or experimental Jules workflow
- title: "[Experiment] "
+title: "[Experiment] "
 labels: ["experiment", "workflow"]
 body:
   - type: markdown
