@@ -1,126 +1,92 @@
-# Vibe Coding with Jules
+# AI Coding Workflow Starter Kit for Jules
 
 [English](./README.md) · [한국어](./README.ko.md)
 
 > Most AI coding demos show only the final code.  
 > This project shows the process.
 
-**Vibe Coding with Jules** is a GitHub-native workflow kit for using **Jules**, an AI coding agent, through real Issue → PR → Review → CI workflows.
+**AI Coding Workflow Starter Kit for Jules** is a GitHub-native playbook for leading Jules through issues, pull requests, reviews, CI, case studies, and controlled automation.
 
-This is not a prompt dump.
+This is not a prompt dump. It is a reusable starter kit for maintainers who want AI-assisted work to leave a clean engineering history.
 
-This repository is designed to show how a human maintainer can lead an AI coding agent using the same primitives that already make open-source collaboration work:
+Repository: <https://github.com/hkimw-underground/vibe-coding-with-jules>
 
-- GitHub Issues
-- GitHub Actions
-- scoped AI coding tasks
-- pull requests
-- human code review
-- CI checks
-- documented case studies
+Suggested public positioning:
 
-Repository:  
-<https://github.com/hkimw-underground/vibe-coding-with-jules>
+```text
+Repo name: jules-workflow-starter-kit
+Display title: AI Coding Workflow Starter Kit for Jules
+Tagline: Most AI coding demos show only the final code. This project shows the process.
+```
 
 ---
 
-## Overview
+## What This Is
 
-Most AI coding workflows still happen outside the development history.
+This repository provides reusable templates and examples for running Jules inside normal GitHub development practice:
 
-A prompt is written somewhere.
-An AI tool generates code.
-The final result is committed.
-The process disappears.
+- scoped GitHub Issues
+- Jules task handoff prompts
+- small pull requests
+- human review checklists
+- CI-first validation
+- case study documentation
+- controlled automation experiments
 
-This repository takes a different approach.
+The core message is simple:
 
-The intended workflow is:
+> A human maintainer leads an AI coding agent through GitHub-native engineering practices.
+
+Not:
+
+> AI built the whole project by itself.
+
+---
+
+## Workflow Levels
+
+This starter kit separates stable maintainer workflows from experimental automation.
+
+| Level | Workflow | Human role | Status |
+| --- | --- | --- | --- |
+| 1 | Human-led Jules workflow | creates issue, reviews PR, merges | recommended default |
+| 2 | Semi-autonomous Jules workflow | creates issue, reviews final PR | practical advanced mode |
+| 3 | Human issue only | writes issue; Jules handles implementation and PR updates | advanced with strict CI |
+| 4 | Daily agentic maintainer loop | steers direction from daily reports | advanced planning loop |
+| 5 | No-human sandbox workflow | observes or audits only | experiment only |
+| 6 | Jules + evaluator-driven evolution | defines objective/evaluator and reviews result | experiment only |
+
+The default workflow is Level 1. Levels 5 and 6 belong in sandboxes, not unprotected production branches.
+
+---
+
+## Core Workflow
 
 ```text
-Human Maintainer opens a GitHub Issue
+Human maintainer opens a scoped GitHub Issue
         ↓
-GitHub Actions triggers Jules
+Jules implements the task
         ↓
-Jules creates a focused pull request
-        ↓
-Human Maintainer reviews the PR
+Jules opens or publishes a focused PR
         ↓
 CI validates the change
+        ↓
+Human maintainer reviews the diff
         ↓
 Maintainer merges or requests changes
 ```
 
-Jules is used as an **AI coding agent**, not as a hidden replacement for maintainership.
-
-The human maintainer owns the scope, architecture, review, and final merge decision.
-
----
-
-## Why
-
-Most AI coding demos show a polished before-and-after result.
-
-That hides the most important engineering questions:
-
-- What issue was the AI agent asked to solve?
-- What constraints were given?
-- What files were in scope?
-- What did the human maintainer review?
-- What did CI verify?
-- What changed between the first PR and the final merge?
-- Can another developer understand the history later?
-
-This project exists because the process matters.
-
-A good AI-assisted workflow should leave behind a GitHub history that is readable, reviewable, and reusable.
-
----
-
-## Workflow
-
-This repository is built around **IssueOps for Jules**.
-
-Instead of manually visiting the Jules web UI for every task, the preferred workflow is:
+This keeps the process visible:
 
 ```text
-1. Write a scoped GitHub Issue.
-2. Add an explicit trigger label, such as `run-jules`.
-3. GitHub Actions builds a Jules task from the Issue.
-4. Jules works on the repository and opens a PR.
-5. The maintainer reviews the PR like any other contribution.
-6. CI must pass before merge.
+Issue → Jules task → PR → Review → CI → Merge
 ```
 
-### Recommended IssueOps Flow
-
-```text
-Issue
-  ↓
-Label: run-jules
-  ↓
-GitHub Actions
-  ↓
-Jules Session
-  ↓
-Pull Request
-  ↓
-Human Review
-  ↓
-CI
-  ↓
-Merge
-```
-
-This keeps the project history inside GitHub.
-
-The Jules web interface may still be used for initial setup, account connection, and API key management. After that, the goal is to operate primarily from GitHub Issues, PRs, reviews, and Actions.
+If another developer cannot understand the history later, the workflow failed.
 
 ---
 
-## What’s Included
-
-Planned repository structure:
+## Repository Structure
 
 ```text
 .
@@ -129,259 +95,66 @@ Planned repository structure:
 ├── AGENTS.md
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.yml
-│   │   ├── feature_request.yml
 │   │   ├── jules_task.yml
-│   │   └── documentation_task.yml
-│   ├── workflows/
-│   │   ├── jules-issueops.yml
-│   │   ├── ci.yml
-│   │   └── markdown-check.yml
-│   └── pull_request_template.md
+│   │   └── workflow_experiment.yml
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── docs/
-│   ├── workflow.md
-│   ├── issueops.md
-│   ├── review-guide.md
-│   ├── prompt-patterns.md
-│   ├── anti-patterns.md
+│   ├── workflows/
+│   │   └── workflow-levels.md
+│   ├── experiments/
+│   │   ├── no-human-only-jules-workflow.md
+│   │   └── jules-alpha-evolve.md
 │   └── case-studies/
 │       ├── digital-logic-circuit.md
 │       └── english-only-project.md
-├── prompts/
-│   ├── issue-to-jules-task.md
-│   ├── implementation-task.md
-│   ├── refactor-task.md
-│   ├── review-fix-task.md
-│   └── ci-failure-investigation.md
-└── examples/
-    ├── issues/
-    ├── prs/
-    └── reviews/
+└── prompts/
+    ├── issue-to-jules-task.md
+    └── daily-maintainer-report.md
 ```
-
----
-
-## Case Studies
-
-This repository will document real Jules-based workflows.
-
-### Case Study A: Digital Logic Circuit
-
-Repository:  
-<https://github.com/hkimw-underground/digital-logic-circuit>
-
-This is a real capstone project used as a case study for moving project planning and implementation work into a GitHub Issue / PR based workflow.
-
-The focus is not only the final code.
-
-The case study will show:
-
-- issue-driven planning
-- hardware/software constraints
-- Jules implementation tasks
-- human maintainer review
-- CI and validation expectations
-- project history as documentation
-
-In this workflow, Jules is an AI coding agent. The human maintainer remains responsible for architecture, hardware decisions, scope control, and final review.
-
----
-
-### Case Study B: English-Only Open Source Project
-
-Status: planned.
-
-This case study will be a clean English-only open-source project designed for a global audience.
-
-It will demonstrate:
-
-- small issues
-- automated Jules task triggering
-- focused pull requests
-- clean PR descriptions
-- CI-first development
-- readable review comments
-- contributor-friendly documentation
-
-The goal is to show that the same workflow can be reused outside a school or capstone context.
-
----
-
-## Templates
-
-This repository provides templates for repeatable AI-assisted development.
-
-### Issue Templates
-
-Issue templates help maintainers define work clearly before an AI coding agent starts.
-
-A good issue should answer:
-
-```text
-What problem are we solving?
-What should change?
-What should not change?
-How do we verify the result?
-```
-
-### Pull Request Template
-
-The PR template is designed to make AI-generated changes easier to review.
-
-A good PR should include:
-
-- linked issue
-- summary of changes
-- validation steps
-- screenshots or logs when useful
-- known limitations
-- reviewer checklist
-
-The PR should explain the change, not just contain the change.
-
-### Jules Task Prompts
-
-Prompt templates are included for repeatable task handoff.
-
-Example categories:
-
-- implement from issue
-- fix review comments
-- add tests
-- refactor safely
-- update documentation
-- investigate CI failure
-
-The issue remains the source of truth.
-
-Prompts should help convert a scoped issue into a reviewable PR. They should not replace engineering judgment.
-
----
-
-## Philosophy
-
-### Human Maintainer Leads
-
-The maintainer owns:
-
-- product direction
-- architecture
-- scope
-- tradeoffs
-- final review
-- merge decisions
-
-Jules can implement, modify, and assist.
-
-Jules should not silently define the project.
-
-### AI Work Should Be Reviewable
-
-AI-generated code should leave behind a clear trail:
-
-```text
-Issue → Action Run → PR → Review → CI → Merge
-```
-
-If the history is hard to understand, the workflow failed.
-
-### Small PRs Beat Big Magic
-
-Large AI-generated pull requests are difficult to review.
-
-This workflow prefers:
-
-- small changes
-- clear acceptance criteria
-- testable outputs
-- reviewable diffs
-
-The goal is maintainability, not spectacle.
-
-### CI Is Part of the Workflow
-
-CI is not optional decoration.
-
-It is the safety layer that keeps AI-assisted changes from becoming unreviewed guesses.
-
-### Do Not Pretend the AI Is Human
-
-Jules is an AI coding agent.
-
-This repository avoids language that presents Jules as a human contributor.
-
-The intended message is:
-
-> A human maintainer can lead an AI coding agent through GitHub-native engineering practices.
-
-Not:
-
-> AI built the whole project by itself.
 
 ---
 
 ## Getting Started
 
-### 1. Use the Repository as a Starter Kit
+### 1. Copy the Starter Kit
 
-Copy the parts you need:
-
-- `AGENTS.md`
-- `.github/ISSUE_TEMPLATE`
-- `.github/workflows/jules-issueops.yml`
-- `.github/pull_request_template.md`
-- `docs/`
-- `prompts/`
-
-### 2. Connect Jules Once
-
-Initial setup may require the Jules web app to connect the GitHub repository and generate an API key.
-
-After setup, the intended workflow should happen mainly through GitHub Issues, Actions, PRs, and Reviews.
-
-### 3. Add the Jules API Key to GitHub Secrets
-
-Store the API key as a repository secret:
+Copy the parts that match your project:
 
 ```text
-JULES_API_KEY
+AGENTS.md
+.github/ISSUE_TEMPLATE/
+.github/PULL_REQUEST_TEMPLATE.md
+docs/workflows/
+prompts/
 ```
 
-Do not commit API keys to the repository.
+### 2. Connect Jules
 
-### 4. Create a Scoped Issue
+Use Jules to connect the GitHub repository and confirm that Jules can access the target repo.
 
-Start with a small, concrete task.
+### 3. Start with One Small Issue
 
-Good examples:
+Good issue:
 
 ```text
-Add AGENTS.md for Jules workflow rules.
-Add markdown documentation CI.
-Add a pull request template for AI-assisted contributions.
+Add a PR template that requires linked issue, validation steps, and reviewer checklist.
 ```
 
-Avoid vague tasks such as:
+Bad issue:
 
 ```text
-Make this project better.
+Improve the project.
 ```
 
-### 5. Trigger Jules from GitHub
+### 4. Ask Jules for a Focused PR
 
-Add the trigger label:
+Use the issue as the source of truth. A Jules prompt should convert the issue into a reviewable PR, not replace the issue.
 
-```text
-run-jules
-```
-
-GitHub Actions should then invoke Jules and ask it to create a focused PR for the issue.
-
-### 6. Review Before Merge
+### 5. Review Before Merge
 
 Before merging, check:
 
-- Does the PR solve the issue?
+- Does the PR solve the linked issue?
 - Is the scope controlled?
 - Are unrelated files changed?
 - Are tests or validation steps included?
@@ -391,41 +164,45 @@ Before merging, check:
 
 ---
 
-## Who This Is For
+## Case Studies
 
-This repository is for:
+### Case Study A: Digital Logic Circuit
 
-- open-source maintainers experimenting with AI coding agents
-- developers who want GitHub-native AI workflows
-- students running capstone projects through Issues and PRs
-- teams that want repeatable IssueOps-based AI task delegation
-- anyone who wants AI coding work to be reviewable
+Repository: <https://github.com/hkimw-underground/digital-logic-circuit>
 
----
+This is a real hardware/software capstone case study. It shows how planning and implementation can move from an external project tracker into GitHub Issues, PRs, human review, and Jules-assisted implementation.
 
-## Project Status
+The maintainer owns architecture, hardware constraints, scope, review, and final merge decisions.
 
-This repository is being built as a reusable workflow template and public playbook.
+### Case Study B: English-Only Open Source Project
 
-The initial focus is:
+Status: planned.
 
-- README
-- AGENTS.md
-- GitHub Issue templates
-- Jules IssueOps workflow
-- PR template
-- CI examples
-- case study documentation
+This will be a clean English-only project for a global audience. It should demonstrate small issues, focused Jules PRs, CI-first development, and readable review comments outside a school/capstone context.
 
 ---
 
-## License
+## Safety Position
 
-Recommended options:
+This repository supports automation, but it does not treat automation as the default goal.
 
-- MIT License for broad reuse
-- Apache-2.0 if explicit patent language is preferred
-- CC BY 4.0 for documentation-heavy reuse
+Stable guidance:
+
+```text
+Human decides direction.
+Human owns architecture.
+Human reviews final changes.
+CI gates every merge.
+Jules is never presented as a human contributor.
+```
+
+Experimental guidance:
+
+```text
+No-human workflows must run in sandbox repos or protected branches.
+Auto-merge requires strict CI and branch protection.
+Evaluator-driven evolution must use measurable tests or benchmarks.
+```
 
 ---
 
@@ -437,8 +214,8 @@ This project shows the process:
 
 ```text
 Issue.
-Action run.
 Prompt.
+Plan.
 Pull request.
 Review.
 CI.
