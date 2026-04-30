@@ -135,7 +135,8 @@ The default workflow is Level 1. Levels 5 and 6 belong in sandboxes, not unprote
 │   ├── quickstart.md
 │   ├── meta/
 │   │   ├── project-readiness.md
-│   │   └── release-checklist.md
+│   │   ├── release-checklist.md
+│   │   └── documentation-audit.md
 │   ├── operations/
 │   │   ├── one-jules-task-at-a-time.md
 │   │   └── branch-protection-and-ci-gates.md
