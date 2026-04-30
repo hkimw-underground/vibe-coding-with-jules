@@ -1,6 +1,6 @@
 # AI Coding Workflow Starter Kit for Jules
 
-[English](./README.md) · [한국어](./README.ko.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Launch Checklist](./docs/meta/release-checklist.md) · [Contributing](./CONTRIBUTING.md) · [Code of Conduct](./CODE_OF_CONDUCT.md) · [Security](./SECURITY.md)
+[English](./README.md) · [한국어](./README.ko.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Launch Checklist](./docs/meta/release-checklist.md) · [Doc Audit](./docs/meta/documentation-audit.md) · [Contributing](./CONTRIBUTING.md) · [Code of Conduct](./CODE_OF_CONDUCT.md) · [Security](./SECURITY.md)
 
 > Most AI coding demos show only the final code.  
 > This project shows the process.
@@ -135,7 +135,8 @@ The default workflow is Level 1. Levels 5 and 6 belong in sandboxes, not unprote
 │   ├── quickstart.md
 │   ├── meta/
 │   │   ├── project-readiness.md
-│   │   └── release-checklist.md
+│   │   ├── release-checklist.md
+│   │   └── documentation-audit.md
 │   ├── operations/
 │   │   ├── one-jules-task-at-a-time.md
 │   │   └── branch-protection-and-ci-gates.md

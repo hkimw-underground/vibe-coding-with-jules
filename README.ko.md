@@ -1,6 +1,6 @@
 # AI Coding Workflow Starter Kit for Jules
 
-[English](./README.md) · [한국어](./README.ko.md) · [프로젝트 준비 상태](./docs/meta/project-readiness.md) · [출시 체크리스트](./docs/meta/release-checklist.md) · [기여하기](./CONTRIBUTING.md) · [행동 강령](./CODE_OF_CONDUCT.md) · [보안](./SECURITY.md)
+[English](./README.md) · [한국어](./README.ko.md) · [프로젝트 준비 상태](./docs/meta/project-readiness.md) · [출시 체크리스트](./docs/meta/release-checklist.md) · [문서 감사](./docs/meta/documentation-audit.md) · [기여하기](./CONTRIBUTING.md) · [행동 강령](./CODE_OF_CONDUCT.md) · [보안](./SECURITY.md)
 
 > 대부분의 AI 코딩 데모는 완성된 코드만 보여줍니다.  
 > 이 프로젝트는 그 과정 자체를 보여줍니다.
@@ -135,7 +135,8 @@ Merge 전에 다음을 확인합니다.
 │   ├── quickstart.md
 │   ├── meta/
 │   │   ├── project-readiness.md
-│   │   └── release-checklist.md
+│   │   ├── release-checklist.md
+│   │   └── documentation-audit.md
 │   ├── operations/
 │   │   ├── one-jules-task-at-a-time.md
 │   │   └── branch-protection-and-ci-gates.md
