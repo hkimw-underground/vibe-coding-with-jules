@@ -5,19 +5,7 @@
 > Most AI coding demos show only the final code.  
 > This project shows the process.
 
-**AI Coding Workflow Starter Kit for Jules** is a GitHub-native playbook for leading Jules through issues, pull requests, reviews, CI, case studies, and controlled automation.
-
-This is not a prompt dump. It is a reusable starter kit for maintainers who want AI-assisted work to leave a clean engineering history.
-
-Repository: <https://github.com/hkimw-underground/vibe-coding-with-jules>
-
-Suggested public positioning:
-
-```text
-Repo name: jules-workflow-starter-kit
-Display title: AI Coding Workflow Starter Kit for Jules
-Tagline: Most AI coding demos show only the final code. This project shows the process.
-```
+**AI Coding Workflow Starter Kit for Jules** is a reusable GitHub-native playbook for maintainers who want AI-assisted work to leave a clean engineering history. It provides templates for leading Jules through issues, pull requests, reviews, CI, case studies, and controlled automation.
 
 ---
 
@@ -121,7 +109,7 @@ If another developer cannot understand the history later, the workflow failed.
 
 ### 1. Copy the Starter Kit
 
-Copy the parts that match your project:
+Copy the following folders and files directly into your own repository to get started:
 
 ```text
 AGENTS.md
@@ -178,7 +166,7 @@ This is a real hardware/software capstone case study. It shows how planning and 
 
 The maintainer owns architecture, hardware constraints, scope, review, and final merge decisions.
 
-### Case Study B: English-Only Open Source Project
+### [Case Study B: English-Only Open Source Project](./docs/case-studies/english-only-project.md)
 
 Status: planned.
 

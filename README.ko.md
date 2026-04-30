@@ -5,19 +5,7 @@
 > 대부분의 AI 코딩 데모는 완성된 코드만 보여줍니다.  
 > 이 프로젝트는 그 과정 자체를 보여줍니다.
 
-**AI Coding Workflow Starter Kit for Jules**는 Jules를 GitHub Issue, Pull Request, Review, CI, case study, controlled automation 안에서 운영하기 위한 GitHub-native playbook입니다.
-
-이 저장소는 단순한 prompt 모음이 아닙니다. AI-assisted work가 읽을 수 있는 engineering history를 남기도록 돕는 reusable starter kit입니다.
-
-Repository: <https://github.com/hkimw-underground/vibe-coding-with-jules>
-
-권장 public positioning:
-
-```text
-Repo name: jules-workflow-starter-kit
-Display title: AI Coding Workflow Starter Kit for Jules
-Tagline: Most AI coding demos show only the final code. This project shows the process.
-```
+**AI Coding Workflow Starter Kit for Jules**는 AI-assisted work가 읽을 수 있는 engineering history를 남기도록 돕는 reusable starter kit입니다. Jules를 GitHub Issue, Pull Request, Review, CI, case study, controlled automation 안에서 운영하기 위한 템플릿을 제공합니다.
 
 ---
 
@@ -121,7 +109,7 @@ Issue → Jules task → PR → Review → CI → Merge
 
 ### 1. Starter Kit 복사하기
 
-프로젝트에 필요한 부분을 복사합니다.
+시작하려면 다음 폴더와 파일들을 자신의 저장소에 직접 복사하세요:
 
 ```text
 AGENTS.md
@@ -178,7 +166,7 @@ Repository: <https://github.com/hkimw-underground/digital-logic-circuit>
 
 Architecture, hardware constraints, scope, review, final merge decision은 maintainer가 책임집니다.
 
-### Case Study B: English-Only Open Source Project
+### [Case Study B: English-Only Open Source Project](./docs/case-studies/english-only-project.md)
 
 Status: planned.
 
