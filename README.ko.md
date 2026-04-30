@@ -169,6 +169,7 @@ Merge 전에 다음을 확인합니다.
 ### Case Study A: Digital Logic Circuit
 
 Repository: <https://github.com/hkimw-underground/digital-logic-circuit>
+케이스 스터디: [docs/case-studies/digital-logic-circuit.md](./docs/case-studies/digital-logic-circuit.md)
 
 실제 hardware/software capstone case study입니다. 외부 project tracker에 있던 planning과 implementation workflow를 GitHub Issues, PRs, human review, Jules-assisted implementation 중심으로 옮기는 사례입니다.
 

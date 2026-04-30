@@ -169,6 +169,7 @@ Before merging, check:
 ### Case Study A: Digital Logic Circuit
 
 Repository: <https://github.com/hkimw-underground/digital-logic-circuit>
+Case Study: [docs/case-studies/digital-logic-circuit.md](./docs/case-studies/digital-logic-circuit.md)
 
 This is a real hardware/software capstone case study. It shows how planning and implementation can move from an external project tracker into GitHub Issues, PRs, human review, and Jules-assisted implementation.
 
