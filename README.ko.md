@@ -1,6 +1,6 @@
 # AI Coding Workflow Starter Kit for Jules
 
-[English](./README.md) · [한국어](./README.ko.md) · [프로젝트 준비 상태](./docs/meta/project-readiness.md) · [기여하기](./CONTRIBUTING.md) · [행동 강령](./CODE_OF_CONDUCT.md) · [보안](./SECURITY.md)
+[English](./README.md) · [한국어](./README.ko.md) · [프로젝트 준비 상태](./docs/meta/project-readiness.md) · [운영 가이드](./docs/operations/one-jules-task-at-a-time.md) · [기여하기](./CONTRIBUTING.md) · [행동 강령](./CODE_OF_CONDUCT.md) · [보안](./SECURITY.md)
 
 > 대부분의 AI 코딩 데모는 완성된 코드만 보여줍니다.  
 > 이 프로젝트는 그 과정 자체를 보여줍니다.
@@ -135,9 +135,11 @@ Merge 전에 다음을 확인합니다.
 │   ├── experiments/
 │   │   ├── no-human-only-jules-workflow.md
 │   │   └── jules-alpha-evolve.md
-│   └── case-studies/
-│       ├── digital-logic-circuit.md
-│       └── english-only-project.md
+│   ├── case-studies/
+│   │   ├── digital-logic-circuit.md
+│   │   └── english-only-project.md
+│   └── operations/
+│       └── one-jules-task-at-a-time.md
 └── prompts/
     ├── issue-to-jules-task.md
     └── daily-maintainer-report.md

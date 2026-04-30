@@ -1,6 +1,6 @@
 # AI Coding Workflow Starter Kit for Jules
 
-[English](./README.md) · [한국어](./README.ko.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Contributing](./CONTRIBUTING.md) · [Code of Conduct](./CODE_OF_CONDUCT.md) · [Security](./SECURITY.md)
+[English](./README.md) · [한국어](./README.ko.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Operations](./docs/operations/one-jules-task-at-a-time.md) · [Contributing](./CONTRIBUTING.md) · [Code of Conduct](./CODE_OF_CONDUCT.md) · [Security](./SECURITY.md)
 
 > Most AI coding demos show only the final code.  
 > This project shows the process.
@@ -135,9 +135,11 @@ The default workflow is Level 1. Levels 5 and 6 belong in sandboxes, not unprote
 │   ├── experiments/
 │   │   ├── no-human-only-jules-workflow.md
 │   │   └── jules-alpha-evolve.md
-│   └── case-studies/
-│       ├── digital-logic-circuit.md
-│       └── english-only-project.md
+│   ├── case-studies/
+│   │   ├── digital-logic-circuit.md
+│   │   └── english-only-project.md
+│   └── operations/
+│       └── one-jules-task-at-a-time.md
 └── prompts/
     ├── issue-to-jules-task.md
     └── daily-maintainer-report.md

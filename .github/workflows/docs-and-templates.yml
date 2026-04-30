@@ -124,6 +124,7 @@ jobs:
             "docs/experiments/jules-alpha-evolve.md"
             "docs/case-studies/digital-logic-circuit.md"
             "docs/case-studies/english-only-project.md"
+            "docs/operations/one-jules-task-at-a-time.md"
             "prompts/issue-to-jules-task.md"
             "prompts/daily-maintainer-report.md"
             "examples/issues/README.md"
