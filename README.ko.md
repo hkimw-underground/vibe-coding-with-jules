@@ -47,6 +47,7 @@ graph LR
 
 **[Quickstart 가이드](./docs/quickstart.md)** (단계별 가이드)
 **[운영 가이드](./docs/operations/one-jules-task-at-a-time.md)** (안전한 태스크 순차 실행 가이드)
+**[브랜치 보호 가이드](./docs/operations/branch-protection-and-ci-gates.md)** (메인 브랜치 보안 및 CI 게이트 설정)
 
 ### 1. Starter Kit 파일 복사하기
 
