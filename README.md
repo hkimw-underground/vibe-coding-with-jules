@@ -116,6 +116,8 @@ If another developer cannot understand the history later, the workflow failed.
 
 ## Getting Started
 
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for the full workflow guidelines.
+
 ### 1. Copy the Starter Kit
 
 Copy the parts that match your project:

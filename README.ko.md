@@ -116,6 +116,8 @@ Issue → Jules task → PR → Review → CI → Merge
 
 ## Getting Started
 
+전체 워크플로우 가이드라인은 [CONTRIBUTING.md](./CONTRIBUTING.md)를 참고하세요.
+
 ### 1. Starter Kit 복사하기
 
 프로젝트에 필요한 부분을 복사합니다.
