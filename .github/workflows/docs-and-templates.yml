@@ -109,6 +109,7 @@ jobs:
           required_paths=(
             "README.md"
             "README.ko.md"
+            "CONTRIBUTING.md"
             "AGENTS.md"
             ".github/PULL_REQUEST_TEMPLATE.md"
             ".github/ISSUE_TEMPLATE/jules_task.yml"
