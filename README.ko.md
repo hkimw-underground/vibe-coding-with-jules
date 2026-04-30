@@ -223,3 +223,9 @@ History.
 ```
 
 진짜 AI-assisted engineering은 여기서 일어납니다.
+
+---
+
+## 라이선스
+
+이 프로젝트는 [MIT 라이선스](./LICENSE)를 따릅니다.
