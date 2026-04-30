@@ -45,6 +45,8 @@ Not:
 
 ## Start Here
 
+**[Quickstart Guide](./docs/quickstart.md)** (for a step-by-step onboarding)
+
 ### 1. Copy the Starter Kit Files
 
 Start with these files in your own repository:
