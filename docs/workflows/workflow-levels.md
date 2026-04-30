@@ -81,6 +81,18 @@ Evaluator defines score
 
 This works best for measurable optimization targets, not vague product direction.
 
+## CI Gate for Starter Kit Changes
+
+This repository includes a lightweight GitHub Actions workflow for documentation and template changes.
+
+The workflow checks:
+
+- YAML syntax under `.github/`
+- basic Markdown hygiene, including trailing whitespace, tabs, and final newlines
+- required starter kit files such as `README.md`, `AGENTS.md`, issue templates, workflow docs, experiment docs, and prompt examples
+
+The check is intentionally small so other projects can copy it as a starter kit example. It is not meant to replace project-specific test suites.
+
 ## Rule of Thumb
 
 The more autonomous the workflow becomes, the stronger the safety gates must be.
