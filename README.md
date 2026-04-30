@@ -9,8 +9,14 @@
 
 It is built for maintainers who want AI-assisted work to leave a clean engineering history:
 
-```text
-Issue → Jules task → Pull request → CI → Human review → Merge
+```mermaid
+graph LR
+  Issue((Issue)) --> Jules(Jules Task)
+  Jules --> PR(Pull Request)
+  PR --> CI(CI)
+  CI --> Review{Human Review}
+  Review -- "Request Changes" --> Jules
+  Review -- "Approve" --> Merge((Merge))
 ```
 
 This is not a prompt dump. It is a reusable workflow kit with templates, examples, review checklists, CI gates, and case studies.

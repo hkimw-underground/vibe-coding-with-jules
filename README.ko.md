@@ -9,8 +9,14 @@
 
 이 저장소는 AI-assisted work가 읽을 수 있는 engineering history를 남기도록 돕습니다.
 
-```text
-Issue → Jules task → Pull request → CI → Human review → Merge
+```mermaid
+graph LR
+  Issue((Issue)) --> Jules(Jules 작업)
+  Jules --> PR(Pull Request)
+  PR --> CI(CI)
+  CI --> Review{Human Review}
+  Review -- "수정 요청" --> Jules
+  Review -- "승인" --> Merge((Merge))
 ```
 
 단순한 prompt 모음이 아니라 template, example, review checklist, CI gate, case study를 포함한 reusable workflow kit입니다.
