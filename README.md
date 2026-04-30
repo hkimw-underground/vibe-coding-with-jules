@@ -107,6 +107,9 @@ If another developer cannot understand the history later, the workflow failed.
 │   └── case-studies/
 │       ├── digital-logic-circuit.md
 │       └── english-only-project.md
+├── examples/
+│   ├── issues/
+│   └── pr-reviews/
 └── prompts/
     ├── issue-to-jules-task.md
     └── daily-maintainer-report.md
@@ -125,6 +128,7 @@ AGENTS.md
 .github/ISSUE_TEMPLATE/
 .github/PULL_REQUEST_TEMPLATE.md
 docs/workflows/
+examples/
 prompts/
 ```
 
