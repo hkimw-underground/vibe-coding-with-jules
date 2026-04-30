@@ -166,7 +166,7 @@ Before merging, check:
 
 ## Case Studies
 
-### Case Study A: Digital Logic Circuit
+### [Case Study A: Digital Logic Circuit](./docs/case-studies/digital-logic-circuit.md)
 
 Repository: <https://github.com/hkimw-underground/digital-logic-circuit>
 
