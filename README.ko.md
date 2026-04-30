@@ -11,14 +11,6 @@
 
 Repository: <https://github.com/hkimw-underground/vibe-coding-with-jules>
 
-권장 public positioning:
-
-```text
-Repo name: jules-workflow-starter-kit
-Display title: AI Coding Workflow Starter Kit for Jules
-Tagline: Most AI coding demos show only the final code. This project shows the process.
-```
-
 ---
 
 ## What This Is
@@ -124,9 +116,12 @@ Issue → Jules task → PR → Review → CI → Merge
 프로젝트에 필요한 부분을 복사합니다.
 
 ```text
+# Core files
 AGENTS.md
 .github/ISSUE_TEMPLATE/
 .github/PULL_REQUEST_TEMPLATE.md
+
+# Optional reference materials
 examples/
 docs/workflows/
 prompts/
@@ -178,7 +173,7 @@ Repository: <https://github.com/hkimw-underground/digital-logic-circuit>
 
 Architecture, hardware constraints, scope, review, final merge decision은 maintainer가 책임집니다.
 
-### Case Study B: English-Only Open Source Project
+### [Case Study B: English-Only Open Source Project](./docs/case-studies/english-only-project.md)
 
 Status: planned.
 

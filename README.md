@@ -11,14 +11,6 @@ This is not a prompt dump. It is a reusable starter kit for maintainers who want
 
 Repository: <https://github.com/hkimw-underground/vibe-coding-with-jules>
 
-Suggested public positioning:
-
-```text
-Repo name: jules-workflow-starter-kit
-Display title: AI Coding Workflow Starter Kit for Jules
-Tagline: Most AI coding demos show only the final code. This project shows the process.
-```
-
 ---
 
 ## What This Is
@@ -124,9 +116,12 @@ If another developer cannot understand the history later, the workflow failed.
 Copy the parts that match your project:
 
 ```text
+# Core files
 AGENTS.md
 .github/ISSUE_TEMPLATE/
 .github/PULL_REQUEST_TEMPLATE.md
+
+# Optional reference materials
 examples/
 docs/workflows/
 prompts/
@@ -178,7 +173,7 @@ This is a real hardware/software capstone case study. It shows how planning and 
 
 The maintainer owns architecture, hardware constraints, scope, review, and final merge decisions.
 
-### Case Study B: English-Only Open Source Project
+### [Case Study B: English-Only Open Source Project](./docs/case-studies/english-only-project.md)
 
 Status: planned.
 
