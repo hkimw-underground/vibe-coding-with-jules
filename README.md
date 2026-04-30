@@ -167,9 +167,9 @@ The maintainer owns architecture, hardware constraints, scope, review, and final
 
 ### [Case Study B: English-Only Open Source Project](./docs/case-studies/english-only-project.md)
 
-Status: planned.
+Status: planned (`md-link-linter`).
 
-A planned English-only case study for a global audience. It will demonstrate the same workflow outside a school/capstone context: small issues, focused Jules PRs, CI-first development, and readable review comments.
+A planned English-only case study for a global audience. It will demonstrate the same workflow outside a school/capstone context by building a minimalist Markdown link checker: small issues, focused Jules PRs, CI-first development, and readable review comments.
 
 ---
 
