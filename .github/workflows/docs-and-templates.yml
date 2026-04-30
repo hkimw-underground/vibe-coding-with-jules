@@ -122,6 +122,8 @@ jobs:
             "docs/experiments/jules-alpha-evolve.md"
             "prompts/issue-to-jules-task.md"
             "prompts/daily-maintainer-report.md"
+            "examples/issues/README.md"
+            "examples/pr-reviews/README.md"
           )
 
           for path in "${required_paths[@]}"; do

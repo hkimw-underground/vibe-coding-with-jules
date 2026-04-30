@@ -98,6 +98,9 @@ Issue → Jules task → PR → Review → CI → Merge
 │   │   ├── jules_task.yml
 │   │   └── workflow_experiment.yml
 │   └── PULL_REQUEST_TEMPLATE.md
+├── examples/
+│   ├── issues/
+│   └── pr-reviews/
 ├── docs/
 │   ├── workflows/
 │   │   └── workflow-levels.md
@@ -124,6 +127,7 @@ Issue → Jules task → PR → Review → CI → Merge
 AGENTS.md
 .github/ISSUE_TEMPLATE/
 .github/PULL_REQUEST_TEMPLATE.md
+examples/
 docs/workflows/
 prompts/
 ```
