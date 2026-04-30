@@ -5,41 +5,81 @@
 > Most AI coding demos show only the final code.  
 > This project shows the process.
 
-**AI Coding Workflow Starter Kit for Jules** is a GitHub-native playbook for leading Jules through issues, pull requests, reviews, CI, case studies, and controlled automation.
+**AI Coding Workflow Starter Kit for Jules** is a GitHub-native starter kit for leading Jules through issues, pull requests, reviews, CI, case studies, and controlled automation.
 
-This is not a prompt dump. It is a reusable starter kit for maintainers who want AI-assisted work to leave a clean engineering history.
-
-Repository: <https://github.com/hkimw-underground/vibe-coding-with-jules>
-
-Suggested public positioning:
+It is built for maintainers who want AI-assisted work to leave a clean engineering history:
 
 ```text
-Repo name: jules-workflow-starter-kit
-Display title: AI Coding Workflow Starter Kit for Jules
-Tagline: Most AI coding demos show only the final code. This project shows the process.
+Issue → Jules task → Pull request → CI → Human review → Merge
 ```
+
+This is not a prompt dump. It is a reusable workflow kit with templates, examples, review checklists, CI gates, and case studies.
 
 ---
 
-## What This Is
+## What You Get
 
-This repository provides reusable templates and examples for running Jules inside normal GitHub development practice:
+- scoped GitHub Issue templates for Jules tasks
+- PR templates that require linked issues and validation notes
+- maintainer review examples for approving or requesting changes
+- lightweight CI checks for Markdown, YAML, and required starter kit files
+- workflow levels from human-led work to sandbox-only automation experiments
+- prompts for issue handoff and daily maintainer reports
+- case studies showing how the workflow applies to real projects
 
-- scoped GitHub Issues
-- Jules task handoff prompts
-- small pull requests
-- human review checklists
-- CI-first validation
-- case study documentation
-- controlled automation experiments
+The core idea is simple:
 
-The core message is simple:
-
-> A human maintainer leads an AI coding agent through GitHub-native engineering practices.
+> A human maintainer leads an AI coding agent through normal GitHub engineering practice.
 
 Not:
 
 > AI built the whole project by itself.
+
+---
+
+## Start Here
+
+### 1. Copy the Starter Kit Files
+
+Start with these files in your own repository:
+
+```text
+AGENTS.md
+.github/ISSUE_TEMPLATE/
+.github/PULL_REQUEST_TEMPLATE.md
+.github/workflows/docs-and-templates.yml
+prompts/
+examples/
+```
+
+### 2. Open a Small Issue
+
+Good issue:
+
+```text
+Add a PR template that requires a linked issue, validation steps, and a reviewer checklist.
+```
+
+Bad issue:
+
+```text
+Improve the project.
+```
+
+### 3. Hand the Issue to Jules
+
+Use the issue as the source of truth. Jules should produce a focused PR, not replace the issue.
+
+### 4. Review Before Merge
+
+Before merging, check:
+
+- Does the PR solve the linked issue?
+- Is the scope controlled?
+- Are unrelated files changed?
+- Are tests or validation steps included?
+- Does CI pass?
+- Would another developer understand this history later?
 
 ---
 
@@ -60,32 +100,6 @@ The default workflow is Level 1. Levels 5 and 6 belong in sandboxes, not unprote
 
 ---
 
-## Core Workflow
-
-```text
-Human maintainer opens a scoped GitHub Issue
-        ↓
-Jules implements the task
-        ↓
-Jules opens or publishes a focused PR
-        ↓
-CI validates the change
-        ↓
-Human maintainer reviews the diff
-        ↓
-Maintainer merges or requests changes
-```
-
-This keeps the process visible:
-
-```text
-Issue → Jules task → PR → Review → CI → Merge
-```
-
-If another developer cannot understand the history later, the workflow failed.
-
----
-
 ## Repository Structure
 
 ```text
@@ -93,10 +107,16 @@ If another developer cannot understand the history later, the workflow failed.
 ├── README.md
 ├── README.ko.md
 ├── AGENTS.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
+├── LICENSE
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   │   ├── jules_task.yml
 │   │   └── workflow_experiment.yml
+│   ├── workflows/
+│   │   └── docs-and-templates.yml
 │   └── PULL_REQUEST_TEMPLATE.md
 ├── examples/
 │   ├── issues/
@@ -117,72 +137,21 @@ If another developer cannot understand the history later, the workflow failed.
 
 ---
 
-## Getting Started
-
-### 1. Copy the Starter Kit
-
-Copy the parts that match your project:
-
-```text
-AGENTS.md
-.github/ISSUE_TEMPLATE/
-.github/PULL_REQUEST_TEMPLATE.md
-examples/
-docs/workflows/
-prompts/
-```
-
-### 2. Connect Jules
-
-Use Jules to connect the GitHub repository and confirm that Jules can access the target repo.
-
-### 3. Start with One Small Issue
-
-Good issue:
-
-```text
-Add a PR template that requires linked issue, validation steps, and reviewer checklist.
-```
-
-Bad issue:
-
-```text
-Improve the project.
-```
-
-### 4. Ask Jules for a Focused PR
-
-Use the issue as the source of truth. A Jules prompt should convert the issue into a reviewable PR, not replace the issue.
-
-### 5. Review Before Merge
-
-Before merging, check:
-
-- Does the PR solve the linked issue?
-- Is the scope controlled?
-- Are unrelated files changed?
-- Are tests or validation steps included?
-- Does CI pass?
-- Is the implementation maintainable?
-- Would another developer understand this history later?
-
----
-
 ## Case Studies
 
 ### [Case Study A: Digital Logic Circuit](./docs/case-studies/digital-logic-circuit.md)
 
 Repository: <https://github.com/hkimw-underground/digital-logic-circuit>
 
-This is a real hardware/software capstone case study. It shows how planning and implementation can move from an external project tracker into GitHub Issues, PRs, human review, and Jules-assisted implementation.
+A real hardware/software capstone case study showing how planning and implementation can move into GitHub Issues, PRs, human review, and Jules-assisted implementation.
 
 The maintainer owns architecture, hardware constraints, scope, review, and final merge decisions.
 
-### Case Study B: English-Only Open Source Project
+### [Case Study B: English-Only Open Source Project](./docs/case-studies/english-only-project.md)
 
 Status: planned.
 
-This will be a clean English-only project for a global audience. It should demonstrate small issues, focused Jules PRs, CI-first development, and readable review comments outside a school/capstone context.
+A planned English-only case study for a global audience. It will demonstrate the same workflow outside a school/capstone context: small issues, focused Jules PRs, CI-first development, and readable review comments.
 
 ---
 
@@ -210,7 +179,7 @@ Evaluator-driven evolution must use measurable tests or benchmarks.
 
 ---
 
-## Core Message
+## Why This Exists
 
 Most AI coding demos show only the final code.
 
