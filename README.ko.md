@@ -45,8 +45,8 @@ graph LR
 
 ## Start Here
 
-- **[Quickstart 가이드](./docs/quickstart.md)** — 단계별 온보딩
-- **[운영 가이드](./docs/operations/one-jules-task-at-a-time.md)** — 안전한 태스크 순차 실행
+**[Quickstart 가이드](./docs/quickstart.md)** (단계별 가이드)
+**[운영 가이드](./docs/operations/one-jules-task-at-a-time.md)** (안전한 태스크 순차 실행 가이드)
 
 ### 1. Starter Kit 파일 복사하기
 
