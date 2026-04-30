@@ -98,6 +98,9 @@ If another developer cannot understand the history later, the workflow failed.
 │   │   ├── jules_task.yml
 │   │   └── workflow_experiment.yml
 │   └── PULL_REQUEST_TEMPLATE.md
+├── examples/
+│   ├── issues/
+│   └── pr-reviews/
 ├── docs/
 │   ├── workflows/
 │   │   └── workflow-levels.md
@@ -124,6 +127,7 @@ Copy the parts that match your project:
 AGENTS.md
 .github/ISSUE_TEMPLATE/
 .github/PULL_REQUEST_TEMPLATE.md
+examples/
 docs/workflows/
 prompts/
 ```
