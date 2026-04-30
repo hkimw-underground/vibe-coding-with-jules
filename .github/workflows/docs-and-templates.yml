@@ -118,6 +118,7 @@ jobs:
             ".github/ISSUE_TEMPLATE/jules_task.yml"
             ".github/ISSUE_TEMPLATE/workflow_experiment.yml"
             "docs/quickstart.md"
+            "docs/operations/one-jules-task-at-a-time.md"
             "docs/meta/project-readiness.md"
             "docs/workflows/workflow-levels.md"
             "docs/experiments/no-human-only-jules-workflow.md"
