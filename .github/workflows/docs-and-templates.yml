@@ -110,6 +110,7 @@ jobs:
             "README.md"
             "README.ko.md"
             "CONTRIBUTING.md"
+            "CODE_OF_CONDUCT.md"
             "LICENSE"
             "AGENTS.md"
             ".github/PULL_REQUEST_TEMPLATE.md"
