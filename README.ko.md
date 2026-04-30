@@ -134,7 +134,8 @@ Merge 전에 다음을 확인합니다.
 ├── docs/
 │   ├── quickstart.md
 │   ├── meta/
-│   │   └── project-readiness.md
+│   │   ├── project-readiness.md
+│   │   └── release-checklist.md
 │   ├── operations/
 │   │   ├── one-jules-task-at-a-time.md
 │   │   └── branch-protection-and-ci-gates.md
