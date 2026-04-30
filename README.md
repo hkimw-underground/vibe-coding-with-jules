@@ -45,8 +45,8 @@ Not:
 
 ## Start Here
 
-**[Quickstart Guide](./docs/quickstart.md)** (for a step-by-step onboarding)
-**[Operations Guide](./docs/operations/one-jules-task-at-a-time.md)** (for sequencing tasks safely)
+- **[Quickstart Guide](./docs/quickstart.md)** — step-by-step onboarding
+- **[Operations Guide](./docs/operations/one-jules-task-at-a-time.md)** — sequencing tasks safely
 
 ### 1. Copy the Starter Kit Files
 
