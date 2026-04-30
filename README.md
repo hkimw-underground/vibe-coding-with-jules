@@ -223,3 +223,9 @@ History.
 ```
 
 That is where real AI-assisted engineering happens.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
