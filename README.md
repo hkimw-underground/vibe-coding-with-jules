@@ -47,7 +47,7 @@ Not:
 
 **[Quickstart Guide](./docs/quickstart.md)** (for a step-by-step onboarding)
 **[Operations Guide](./docs/operations/one-jules-task-at-a-time.md)** (for sequencing tasks safely)
-**[Branch Protection Guide](./docs/operations/branch-protection-and-ci-gates.md)** (for securing the main branch)
+**[Branch Protection Guide](./docs/operations/branch-protection-and-ci-gates.md)** (for CI gates and protecting main)
 
 ### 1. Copy the Starter Kit Files
 
