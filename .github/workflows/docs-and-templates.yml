@@ -121,6 +121,7 @@ jobs:
             "docs/operations/one-jules-task-at-a-time.md"
             "docs/operations/branch-protection-and-ci-gates.md"
             "docs/meta/project-readiness.md"
+            "docs/meta/release-checklist.md"
             "docs/workflows/workflow-levels.md"
             "docs/experiments/no-human-only-jules-workflow.md"
             "docs/experiments/jules-alpha-evolve.md"
