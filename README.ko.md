@@ -46,6 +46,7 @@ graph LR
 ## Start Here
 
 **[Quickstart 가이드](./docs/quickstart.md)** (단계별 가이드)
+**[Project Readiness](./docs/meta/project-readiness.md)** (품질 체크리스트 및 한계점)
 
 ### 1. Starter Kit 파일 복사하기
 

@@ -46,6 +46,7 @@ Not:
 ## Start Here
 
 **[Quickstart Guide](./docs/quickstart.md)** (for a step-by-step onboarding)
+**[Project Readiness](./docs/meta/project-readiness.md)** (quality checklist and limitations)
 
 ### 1. Copy the Starter Kit Files
 
