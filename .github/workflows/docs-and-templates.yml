@@ -80,11 +80,19 @@ jobs:
                   failed = True
 
               for index, line in enumerate(lines, start=1):
-                  if line.rstrip(" \t") != line:
-                      print(f"Markdown ERROR: {path}:{index}: trailing whitespace")
-                      failed = True
                   if "\t" in line:
                       print(f"Markdown ERROR: {path}:{index}: tab character")
+                      failed = True
+
+                  stripped = line.rstrip(" ")
+                  trailing_spaces = len(line) - len(stripped)
+
+                  # Allow exactly two trailing spaces for Markdown hard line breaks.
+                  if trailing_spaces not in (0, 2):
+                      print(
+                          f"Markdown ERROR: {path}:{index}: "
+                          f"unexpected trailing spaces ({trailing_spaces})"
+                      )
                       failed = True
 
               print(f"Markdown OK: {path}")
