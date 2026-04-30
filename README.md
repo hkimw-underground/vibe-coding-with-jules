@@ -1,6 +1,6 @@
 # AI Coding Workflow Starter Kit for Jules
 
-[English](./README.md) · [한국어](./README.ko.md)
+[English](./README.md) · [한국어](./README.ko.md) · [Contributing](./CONTRIBUTING.md)
 
 > Most AI coding demos show only the final code.  
 > This project shows the process.
