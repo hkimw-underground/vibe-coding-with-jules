@@ -120,6 +120,8 @@ jobs:
             "docs/workflows/workflow-levels.md"
             "docs/experiments/no-human-only-jules-workflow.md"
             "docs/experiments/jules-alpha-evolve.md"
+            "docs/case-studies/digital-logic-circuit.md"
+            "docs/case-studies/english-only-project.md"
             "prompts/issue-to-jules-task.md"
             "prompts/daily-maintainer-report.md"
             "examples/issues/README.md"
