@@ -45,9 +45,9 @@ Not:
 
 ## Start Here
 
-**[Quickstart Guide](./docs/quickstart.md)** (for a step-by-step onboarding)
-**[Operations Guide](./docs/operations/one-jules-task-at-a-time.md)** (for sequencing tasks safely)
-**[Branch Protection Guide](./docs/operations/branch-protection-and-ci-gates.md)** (for CI gates and protecting main)
+- **[Quickstart Guide](./docs/quickstart.md)** — step-by-step onboarding
+- **[Operations Guide](./docs/operations/one-jules-task-at-a-time.md)** — sequencing tasks safely
+- **[Branch Protection Guide](./docs/operations/branch-protection-and-ci-gates.md)** — CI gates and protecting `main`
 
 ### 1. Copy the Starter Kit Files
 
@@ -132,6 +132,12 @@ The default workflow is Level 1. Levels 5 and 6 belong in sandboxes, not unprote
 │   ├── issues/
 │   └── pr-reviews/
 ├── docs/
+│   ├── quickstart.md
+│   ├── meta/
+│   │   └── project-readiness.md
+│   ├── operations/
+│   │   ├── one-jules-task-at-a-time.md
+│   │   └── branch-protection-and-ci-gates.md
 │   ├── workflows/
 │   │   └── workflow-levels.md
 │   ├── experiments/
