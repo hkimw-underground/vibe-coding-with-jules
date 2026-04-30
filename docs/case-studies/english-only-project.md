@@ -6,7 +6,7 @@ This case study will document a clean English-only open-source project using the
 
 ## Purpose
 
-Case Study B exists to show that the workflow is reusable outside a school or capstone context, specifically for a global audience using English as the primary language for code, documentation, and collaboration.
+Case Study B exists to show that the workflow is reusable outside a school or capstone context. It will demonstrate how a human maintainer leads Jules (an AI coding agent) through standard GitHub engineering practices for a globally accessible open-source project.
 
 It should demonstrate:
 
@@ -16,23 +16,26 @@ It should demonstrate:
 - Readable human review comments
 - Clear separation between AI agent work and maintainer ownership
 
-## Recommended Project: `md-link-linter`
+## Recommended Project Direction
 
-To demonstrate the workflow, Case Study B recommends building a minimalist Markdown link checker CLI tool.
+**Primary Option: Markdown link checker mini CLI**
 
-**Description:** A command-line tool that scans Markdown files for broken internal and external links.
+A small English-only developer tool or documentation-focused utility is the best fit because it is easy for global readers to understand, test, and review. A Markdown link checker mini CLI provides a real, testable implementation surface without domain-specific complexity.
 
 ### Project Constraints
+
+To ensure a clear, readable case study, the project must:
 
 - **English-Only:** All code, comments, issues, and documentation must be in English.
 - **Small Surface:** Focus on core functionality (parsing links, checking status) rather than complex edge cases.
 - **Testability:** Must support automated unit tests for link parsing and status checking.
 - **Jules-Friendly:** Issues should be small enough to be completed in single-digit file changes.
+- **Identity:** Maintain Jules's identity strictly as an AI coding agent, not a human contributor.
 
 ### Repository Name Options
 
 - `md-link-linter`
-- `link-check-mini`
+- `markdown-link-validator`
 - `jules-linter-demo`
 
 ## First 5 Starter Issues for Jules
@@ -53,24 +56,28 @@ To demonstrate the workflow, Case Study B recommends building a minimalist Markd
 
 ## CI Requirements
 
+The project must implement CI gates to enforce quality before human review:
+
 - **Linting**: Standard linting rules for the chosen language.
 - **Tests**: Automated test suite running on every PR via GitHub Actions.
 - **Hygiene**: Markdown hygiene checks for the project's own documentation.
 
 ## Review Examples to Capture
 
-- **Approval**: A review where the maintainer confirms the link parsing correctly handles edge case formats.
-- **Change Request**: A review where the maintainer asks Jules to add a timeout to the external link check.
-- **Refinement**: A review where the maintainer suggests a better error message for missing files.
+During the project, maintainers should save examples of:
+
+- **Change Request**: A PR where the maintainer requested changes due to scope creep or naming conventions.
+- **CI Fix**: A PR where Jules added tests or refined logic to fix a CI failure.
+- **Clean Approval**: A PR approved and merged cleanly after addressing human feedback.
 
 ## Completion Criteria
 
-This planned brief can be replaced by the real case study once the following are met:
+The planned brief can be replaced with the real case study when the following criteria are met:
 
-1. The separate repository is created and public.
+1. The repository is created and public.
 2. At least 5 Jules-driven PRs have been merged following the workflow.
-3. The repo includes a clear README and CI status.
-4. Representative PRs and reviews are linked in the final case study document.
+3. PRs clearly demonstrate the human-led AI coding process (Issue → PR → Review → Merge).
+4. Representative PRs, descriptions, CI runs, and human reviews are captured and documented.
 
 ## Maintainer Notes
 
