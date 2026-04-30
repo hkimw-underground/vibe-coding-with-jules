@@ -1,48 +1,53 @@
 # Branch Protection and CI Gates
 
-To safely manage Jules as an AI coding agent, your repository needs branch protection rules and CI (Continuous Integration) gates. This ensures that `main` is protected, and every change proposed by Jules is verified and approved by a human maintainer before merging.
+Use branch protection rules and CI gates to keep the Jules workflow reviewable. The goal is simple: changes can be proposed quickly, but `main` should still be protected by pull requests, required checks, and human review.
 
-This guide explains why branch protection matters for AI workflows and provides recommended settings for a small maintainer-owned repository.
+This guide explains why branch protection matters for AI-assisted workflows and provides recommended settings for a small maintainer-owned repository.
 
 ## Why CI Gates Matter for Jules
 
-Jules creates pull requests based on issues. While Jules is skilled, it is an agent, not a human. It can make logical errors, misinterpret ambiguous requirements, or format code incorrectly.
+Jules creates pull requests based on issues. Like any automated coding agent, it can misread ambiguous requirements, touch files outside the intended scope, or format documentation incorrectly.
 
-- **Human Review:** Forces a human maintainer to review the AI's work, validating its intent and correctness.
-- **CI Validation:** Ensures code formatting (like Markdown hygiene) and structure (like YAML syntax) are correct without wasting human review time.
-- **Protected `main`:** Prevents Jules (or any contributor) from accidentally pushing broken code directly to the primary branch.
+- **Human Review:** Keeps a human maintainer responsible for intent, correctness, architecture, and merge decisions.
+- **CI Validation:** Checks formatting and structure, such as Markdown hygiene and YAML syntax, before review time is spent on details.
+- **Protected `main`:** Reduces the chance that unreviewed or unvalidated changes land on the primary branch.
 
 ## Recommended Settings for Solo Maintainers
 
-For a solo maintainer using this starter kit, you want a lightweight policy that enforces safety without being overly restrictive.
+For a solo maintainer using this starter kit, use a lightweight policy that enforces review without adding unnecessary friction.
 
 ### 1. Go to Repository Settings
 
 Navigate to your repository on GitHub.
+
 1. Click **Settings** in the top navigation bar.
-2. In the left sidebar under "Code and automation", click **Branches**.
-3. Click **Add branch protection rule**.
+2. In the left sidebar under **Code and automation**, click **Branches** or **Rulesets**.
+3. Create a new branch protection rule or branch ruleset for your default branch.
 
 ### 2. Configure the Rule
 
-Set the **Branch name pattern** to `main` (or `master`, depending on your default branch).
+Set the branch name pattern to `main`, or to your repository's default branch if it uses a different name.
 
-Check the following settings:
+Recommended baseline:
 
 - [x] **Require a pull request before merging**
-  - This ensures Jules cannot push directly to `main`.
-  - Leave **Require approvals** unchecked or set to 0 if you are a solo maintainer, as you cannot approve your own PRs. If you work in a team, require at least 1 approval.
+  - This keeps changes on a PR path before they reach `main`.
+  - For a solo maintainer, keep approval requirements lightweight. If GitHub prevents self-approval in your setup, rely on PR review plus required checks instead of requiring another account.
 - [x] **Require status checks to pass before merging**
-  - [x] **Require branches to be up to date before merging** (Optional but recommended to prevent merge conflicts).
-  - Search for and select your CI workflows in the status checks box. For this starter kit, select the job name for the docs workflow (e.g., `Validate docs and templates` or `docs-and-templates`).
-- [x] **Do not allow bypassing the above settings**
-  - Ensure this applies to administrators as well, so even you don't accidentally bypass the CI gates.
-- [x] **Restrict who can push to matching branches**
-  - Leave this empty to prevent anyone from pushing directly to `main`.
-- [x] **Allow force pushes** (Leave unchecked)
-  - Blocking force pushes protects the history of `main`.
-- [x] **Allow deletions** (Leave unchecked)
-  - Restricts accidental deletion of the `main` branch.
+  - Enable required checks for your CI workflows.
+  - For this starter kit, use the docs workflow check, such as `Validate docs and templates`.
+- [x] **Require branches to be up to date before merging**
+  - Optional but useful when multiple PRs touch shared files.
+- [x] **Block force pushes**
+  - Keep force pushes disabled for `main` so history stays reviewable.
+- [x] **Restrict deletions**
+  - Prevent accidental deletion of the default branch.
+
+Optional hardening:
+
+- Apply the rule to administrators if your project needs a stricter policy.
+- Restrict who can push to matching branches if multiple people have write access.
+- Require conversations to be resolved before merging when PR discussions carry important decisions.
 
 ### 3. Save Changes
 
@@ -50,12 +55,13 @@ Click **Create** or **Save changes** at the bottom of the page.
 
 ## Scaling Up for Teams
 
-The settings above are lightweight and designed for a solo maintainer. If you work with a team, you can tighten the rules:
+The settings above are lightweight and designed for a solo maintainer. If you work with a team, tighten the rules gradually:
 
 - Require at least 1 or 2 human approvals.
 - Enforce code owner reviews if your repository uses a `CODEOWNERS` file.
 - Require conversations to be resolved before merging.
+- Require signed commits if your project needs stronger provenance controls.
 
 ## Note on Automation Safety
 
-Branch protection is a crucial layer of defense, but it does not make automation fully safe. Always review the changes Jules proposes. Branch protection ensures the *process* is followed, but the *quality* of the code still requires human oversight.
+Branch protection is a useful control, but it does not make automation fully safe. It helps enforce the process: PR first, CI second, human review before merge. The quality and direction of the project still require maintainer judgment.
