@@ -16,6 +16,7 @@ Please do not report security-sensitive issues via public GitHub issues.
 To report a vulnerability, please contact the project maintainers directly via email. You can find contact information in the maintainers' GitHub profiles.
 
 Please include the following in your report:
+
 - A description of the vulnerability.
 - Steps to reproduce the vulnerability.
 - Any potential impact.
@@ -27,4 +28,4 @@ We will attempt to acknowledge receipt of your vulnerability report as soon as p
 ## Security-Related Workflow Changes
 
 Because this project manages an AI coding agent workflow, changes to automation that could impact repository security require careful review.
-Any security-related workflow changes must be explicitly reviewed by a human maintainer before being merged. Do not bypass human review for workflow modifications.
+Any security-related workflow changes must be explicitly reviewed by a human maintainer before being merged.
