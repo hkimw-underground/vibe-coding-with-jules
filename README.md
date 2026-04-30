@@ -45,6 +45,8 @@ Not:
 
 ## Start Here
 
+[Read the Quickstart guide](./docs/quickstart.md) for a complete walkthrough.
+
 ### 1. Copy the Starter Kit Files
 
 Start with these files in your own repository:

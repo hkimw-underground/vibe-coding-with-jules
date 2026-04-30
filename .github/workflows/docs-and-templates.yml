@@ -117,6 +117,7 @@ jobs:
             ".github/PULL_REQUEST_TEMPLATE.md"
             ".github/ISSUE_TEMPLATE/jules_task.yml"
             ".github/ISSUE_TEMPLATE/workflow_experiment.yml"
+            "docs/quickstart.md"
             "docs/workflows/workflow-levels.md"
             "docs/experiments/no-human-only-jules-workflow.md"
             "docs/experiments/jules-alpha-evolve.md"

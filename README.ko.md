@@ -45,6 +45,8 @@ graph LR
 
 ## Start Here
 
+[Quickstart 가이드 읽기](./docs/quickstart.md) (전체 워크스루).
+
 ### 1. Starter Kit 파일 복사하기
 
 자기 repository에 먼저 아래 파일들을 복사합니다.
