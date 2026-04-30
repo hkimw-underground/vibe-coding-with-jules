@@ -45,9 +45,9 @@ graph LR
 
 ## Start Here
 
-**[Quickstart 가이드](./docs/quickstart.md)** (단계별 가이드)
-**[운영 가이드](./docs/operations/one-jules-task-at-a-time.md)** (안전한 태스크 순차 실행 가이드)
-**[브랜치 보호 가이드](./docs/operations/branch-protection-and-ci-gates.md)** (CI 게이트와 main 보호를 위해)
+- **[Quickstart 가이드](./docs/quickstart.md)** — 단계별 온보딩
+- **[운영 가이드](./docs/operations/one-jules-task-at-a-time.md)** — 안전한 태스크 순차 실행
+- **[브랜치 보호 가이드](./docs/operations/branch-protection-and-ci-gates.md)** — CI 게이트와 `main` 보호
 
 ### 1. Starter Kit 파일 복사하기
 
@@ -132,6 +132,12 @@ Merge 전에 다음을 확인합니다.
 │   ├── issues/
 │   └── pr-reviews/
 ├── docs/
+│   ├── quickstart.md
+│   ├── meta/
+│   │   └── project-readiness.md
+│   ├── operations/
+│   │   ├── one-jules-task-at-a-time.md
+│   │   └── branch-protection-and-ci-gates.md
 │   ├── workflows/
 │   │   └── workflow-levels.md
 │   ├── experiments/
