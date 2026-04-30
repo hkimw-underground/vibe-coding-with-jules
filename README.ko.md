@@ -167,9 +167,9 @@ Architecture, hardware constraints, scope, review, final merge decision은 maint
 
 ### [Case Study B: English-Only Open Source Project](./docs/case-studies/english-only-project.md)
 
-Status: planned.
+Status: planned (`md-link-linter`).
 
-글로벌 독자를 위한 예정된 순수 영어 case study입니다. 학교/capstone 맥락 밖에서도 small issues, focused Jules PRs, CI-first development, readable review comments가 재사용 가능하다는 것을 보여주는 목적입니다.
+글로벌 독자를 위한 예정된 순수 영어 case study입니다. 학교/capstone 맥락 밖에서도 minimalist Markdown link checker 제작 과정을 통해 small issues, focused Jules PRs, CI-first development, readable review comments가 재사용 가능하다는 것을 보여주는 목적입니다.
 
 ---
 
