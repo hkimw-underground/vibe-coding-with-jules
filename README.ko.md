@@ -5,84 +5,35 @@
 > 대부분의 AI 코딩 데모는 완성된 코드만 보여줍니다.  
 > 이 프로젝트는 그 과정 자체를 보여줍니다.
 
-**AI Coding Workflow Starter Kit for Jules**는 Jules를 GitHub Issue, Pull Request, Review, CI, case study, controlled automation 안에서 운영하기 위한 GitHub-native playbook입니다.
-
-이 저장소는 단순한 prompt 모음이 아닙니다. AI-assisted work가 읽을 수 있는 engineering history를 남기도록 돕는 reusable starter kit입니다.
-
-Repository: <https://github.com/hkimw-underground/vibe-coding-with-jules>
-
-권장 public positioning:
-
-```text
-Repo name: jules-workflow-starter-kit
-Display title: AI Coding Workflow Starter Kit for Jules
-Tagline: Most AI coding demos show only the final code. This project shows the process.
-```
+**AI Coding Workflow Starter Kit for Jules**는 AI 코딩 에이전트(**Jules**)를 GitHub Issue, Pull Request, Review, CI 안에서 운영하기 위한 GitHub-native playbook입니다. AI-assisted work가 깨끗하고 전문적인 engineering history를 남기도록 돕는 reusable starter kit입니다.
 
 ---
 
-## What This Is
+## Why This Kit?
 
-이 저장소는 Jules를 일반적인 GitHub 개발 관행 안에서 운영하기 위한 template과 예시를 제공합니다.
+대부분의 AI 코딩 workflow는 휘발성인 채팅 로그 안에 숨겨져 있습니다. 이 키트는 표준 GitHub 관행을 사용하여 그 과정을 투명하게 공개합니다.
 
-- scoped GitHub Issues
-- Jules task handoff prompts
-- small pull requests
-- human review checklists
-- CI-first validation
-- case study documentation
-- controlled automation experiments
+- **추적 가능한 이력**: 모든 변경 사항은 Issue와 연결되며 PR review를 통해 검증됩니다.
+- **Human-in-the-Loop**: Human maintainer가 방향을 리드하고, Jules는 세부 사항을 구현합니다.
+- **재사용 가능한 템플릿**: 바로 사용 가능한 Issue template, PR format, handoff prompt를 제공합니다.
+- **실전 검증**: 엄격한 human-led 방식부터 실험적인 루프까지, 자율성 수준별 workflow를 문서화했습니다.
 
-핵심 메시지는 단순합니다.
-
-> Human maintainer가 AI coding agent를 GitHub-native engineering practice 안에서 리드한다.
-
-아래 메시지가 아닙니다.
-
-> AI가 프로젝트 전체를 혼자 만들었다.
-
----
-
-## Workflow Levels
-
-이 starter kit은 안정적인 maintainer workflow와 실험적 automation을 분리합니다.
-
-| Level | Workflow | Human role | Status |
-| --- | --- | --- | --- |
-| 1 | Human-led Jules workflow | issue 작성, PR review, merge | recommended default |
-| 2 | Semi-autonomous Jules workflow | issue 작성, final PR review | practical advanced mode |
-| 3 | Human issue only | issue만 작성, Jules가 implementation/PR update | advanced with strict CI |
-| 4 | Daily agentic maintainer loop | daily report를 보고 방향 조정 | advanced planning loop |
-| 5 | No-human sandbox workflow | 관찰 또는 audit만 수행 | experiment only |
-| 6 | Jules + evaluator-driven evolution | objective/evaluator 정의, 결과 review | experiment only |
-
-기본값은 Level 1입니다. Level 5와 6은 sandbox 또는 protected experiment branch에서만 다룹니다.
+목표는 단순합니다. **Human maintainer가 AI coding agent를 리드한다.** 이는 "AI가 혼자서 프로젝트를 만든다"는 뜻이 아니라, 확장 가능한 AI-assisted engineering을 의미합니다.
 
 ---
 
 ## Core Workflow
 
-```text
-Human maintainer가 scoped GitHub Issue 작성
-        ↓
-Jules가 task 구현
-        ↓
-Jules가 focused PR 생성 또는 publish
-        ↓
-CI가 변경 사항 검증
-        ↓
-Human maintainer가 diff review
-        ↓
-Maintainer가 merge 또는 수정 요청
-```
-
-이 workflow는 과정을 GitHub history에 남깁니다.
+Human maintainer는 표준 GitHub flow를 사용하여 과정을 리드합니다.
 
 ```text
-Issue → Jules task → PR → Review → CI → Merge
+Issue → Jules Task → Pull Request → Human Review → CI → Merge
 ```
 
-나중에 다른 개발자가 history를 이해할 수 없다면 workflow가 실패한 것입니다.
+1. **Human**이 scoped GitHub Issue를 작성합니다.
+2. **Jules**가 task를 구현하고 focused PR을 생성합니다.
+3. **CI**가 변경 사항을 검증합니다.
+4. **Human**이 diff를 review하고 merge합니다.
 
 ---
 
@@ -90,140 +41,62 @@ Issue → Jules task → PR → Review → CI → Merge
 
 ```text
 .
+├── AGENTS.md            # Jules를 위한 필수 지침
+├── .github/             # GitHub Issue 및 PR 템플릿
+├── docs/                # Workflow level 및 Case Study
+├── examples/            # Issue 및 PR review 예시
+├── prompts/             # 표준화된 AI handoff prompt
 ├── README.md
-├── README.ko.md
-├── AGENTS.md
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   │   ├── jules_task.yml
-│   │   └── workflow_experiment.yml
-│   └── PULL_REQUEST_TEMPLATE.md
-├── examples/
-│   ├── issues/
-│   └── pr-reviews/
-├── docs/
-│   ├── workflows/
-│   │   └── workflow-levels.md
-│   ├── experiments/
-│   │   ├── no-human-only-jules-workflow.md
-│   │   └── jules-alpha-evolve.md
-│   └── case-studies/
-│       ├── digital-logic-circuit.md
-│       └── english-only-project.md
-└── prompts/
-    ├── issue-to-jules-task.md
-    └── daily-maintainer-report.md
+└── README.ko.md
 ```
 
 ---
 
 ## Getting Started
 
-### 1. Starter Kit 복사하기
+### 1. 핵심 파일 복사하기
+이 workflow를 시작하려면 다음 파일들을 저장소에 추가하세요.
 
-프로젝트에 필요한 부분을 복사합니다.
-
-```text
-AGENTS.md
-.github/ISSUE_TEMPLATE/
-.github/PULL_REQUEST_TEMPLATE.md
-examples/
-docs/workflows/
-prompts/
-```
+- `AGENTS.md`
+- `.github/ISSUE_TEMPLATE/`
+- `.github/PULL_REQUEST_TEMPLATE.md`
+- `prompts/`
 
 ### 2. Jules 연결하기
-
-Jules에서 GitHub repository 연결을 확인합니다.
+Jules가 저장소에 접근할 수 있고 `AGENTS.md` 파일을 읽을 수 있는지 확인합니다.
 
 ### 3. 작은 Issue 하나로 시작하기
+잘 정의된 Issue(예: "Add unit tests for the login module")를 열고 `jules_task.yml` 템플릿을 사용하세요.
 
-좋은 issue:
+---
 
-```text
-Add a PR template that requires linked issue, validation steps, and reviewer checklist.
-```
+## Workflow Levels
 
-나쁜 issue:
+Human의 개입 수준에 따라 workflow를 분류합니다. Level 1을 기본 권장 사항으로 합니다.
 
-```text
-Improve the project.
-```
-
-### 4. Jules에게 Focused PR 요청하기
-
-Issue를 source of truth로 사용합니다. Jules prompt는 issue를 reviewable PR로 바꾸는 역할을 해야지, issue 자체를 대체하면 안 됩니다.
-
-### 5. Merge 전 Review하기
-
-Merge 전에 다음을 확인합니다.
-
-- PR이 linked issue를 해결하는가?
-- scope가 통제되어 있는가?
-- 관련 없는 파일이 바뀌지 않았는가?
-- tests 또는 validation steps가 포함되어 있는가?
-- CI가 통과하는가?
-- 구현이 유지보수 가능한가?
-- 나중에 다른 개발자가 이 history를 이해할 수 있는가?
+| Level | Workflow | Human role | Status |
+| --- | --- | --- | --- |
+| 1 | Human-led Jules workflow | Issue 작성, PR review, merge | **권장** |
+| 2 | Semi-autonomous Jules workflow | Issue 작성, 최종 PR review | 실용적 |
+| 3 | Human issue only | Issue 작성; Jules가 구현 담당 | 고급 |
+| 4 | Daily agentic maintainer loop | Daily report를 보고 방향 조정 | 실험적 |
+| 5 | No-human sandbox workflow | 관찰 또는 audit만 수행 | Sandbox 전용 |
 
 ---
 
 ## Case Studies
 
-### [Case Study A: Digital Logic Circuit](./docs/case-studies/digital-logic-circuit.md)
-
-Repository: <https://github.com/hkimw-underground/digital-logic-circuit>
-
-실제 hardware/software capstone case study입니다. 외부 project tracker에 있던 planning과 implementation workflow를 GitHub Issues, PRs, human review, Jules-assisted implementation 중심으로 옮기는 사례입니다.
-
-Architecture, hardware constraints, scope, review, final merge decision은 maintainer가 책임집니다.
-
-### Case Study B: English-Only Open Source Project
-
-Status: planned.
-
-글로벌 독자를 위한 순수 영어 오픈소스 사례입니다. 학교/capstone 맥락 밖에서도 small issues, focused Jules PRs, CI-first development, readable review comments가 재사용 가능하다는 것을 보여주는 목적입니다.
-
----
-
-## Safety Position
-
-이 저장소는 automation을 다루지만, automation 자체를 기본 목표로 삼지 않습니다.
-
-Stable guidance:
-
-```text
-Human decides direction.
-Human owns architecture.
-Human reviews final changes.
-CI gates every merge.
-Jules is never presented as a human contributor.
-```
-
-Experimental guidance:
-
-```text
-No-human workflows must run in sandbox repos or protected branches.
-Auto-merge requires strict CI and branch protection.
-Evaluator-driven evolution must use measurable tests or benchmarks.
-```
+- **[Case Study A: Digital Logic Circuit](./docs/case-studies/digital-logic-circuit.md)**: Jules를 통해 관리된 실제 hardware/software 프로젝트 사례.
+- **[Case Study B: English-Only Project](./docs/case-studies/english-only-project.md)**: 글로벌 독자를 위한 오픈소스 사례 (준비 중).
 
 ---
 
 ## Core Message
 
-대부분의 AI coding demo는 완성된 코드만 보여줍니다.
-
-이 프로젝트는 과정을 보여줍니다.
+대부분의 AI 코딩 데모는 완성된 코드만 보여줍니다. **이 프로젝트는 과정을 보여줍니다.**
 
 ```text
-Issue.
-Prompt.
-Plan.
-Pull request.
-Review.
-CI.
-History.
+Issue → Prompt → Plan → Pull Request → Review → CI → History
 ```
 
 진짜 AI-assisted engineering은 여기서 일어납니다.
