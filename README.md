@@ -108,7 +108,7 @@ The maintainer stays responsible for scope, architecture, validation, and the fi
 ## Case Studies
 
 - **[Case Study A: Digital Logic Circuit](./docs/case-studies/digital-logic-circuit.md)** — a real hardware/software capstone project using the Jules workflow.
-- **[Case Study B: English-Only Project Brief](./docs/case-studies/english-only-project.md)** — a planned small open-source project for showing the same workflow to a global audience.
+- **[Case Study B: English-Only Project Brief](./docs/case-studies/english-only-project.md)** — an actionable plan for a small open-source project to show the workflow to a global audience.
 
 ---
 

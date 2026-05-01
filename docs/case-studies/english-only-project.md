@@ -1,91 +1,129 @@
-# Case Study B: English-Only Open Source Project
+# Case Study B: English-Only Project Brief
 
-Status: planned.
+Status: Actionable Project Plan
 
-This case study will document a clean English-only open-source project using the same Jules workflow shown in this starter kit.
+This document serves as an actionable plan for creating Case Study B: a clean, English-only open-source project that demonstrates the Jules-assisted workflow for a global audience.
 
-## Purpose
+## Project Overview
 
-Case Study B exists to show that the workflow is reusable outside a school or capstone context, specifically for a global audience using English as the primary language for code, documentation, and collaboration.
-
-It should demonstrate:
-
-- Small GitHub Issues
-- Focused Jules-assisted pull requests
-- CI-first development
-- Readable human review comments
-- Clear separation between AI agent work and maintainer ownership
-
-## Recommended Project: `md-link-linter`
-
-To demonstrate the workflow, Case Study B recommends building a minimalist Markdown link checker CLI tool.
-
-**Description:** A command-line tool that scans Markdown files and reports internal or external links that need attention.
-
-### Project Constraints
-
-- **English-only:** All code, comments, issues, and documentation should be in English.
-- **Small surface:** Focus on core functionality, such as parsing links and reporting status, rather than complex edge cases.
-- **Testability:** The project should support automated unit tests for link parsing and reporting behavior.
-- **Issue-sized tasks:** Issues should be small enough to be completed in focused PRs with limited file changes.
+### Recommended Repository Name
+`md-link-linter`
 
 ### Repository Name Options
-
-- `md-link-linter`
+- `md-link-linter` (Recommended)
 - `link-check-mini`
 - `simple-md-link-checker`
 
-## First 5 Starter Issues for Jules
+### Project Goal
+To build a minimalist Markdown link checker CLI tool that scans `.md` files and reports internal (local) and external (web) links that need attention.
 
-1. **Initialize CLI project structure:** Set up a basic project structure with a CLI entry point that accepts a file path and prints `Checking [file]...`.
-2. **Implement Markdown link extractor:** Write a parser to extract Markdown-style links such as `[text](url)` from a given file.
-3. **Add internal link validation:** Implement a check to verify that internal relative links, such as `./docs/setup.md`, point to existing files on disk.
-4. **Add external link reporting:** Add basic status reporting for external links with a clear timeout policy.
-5. **Implement summary reporter:** Add a final report to the CLI output showing the total number of links checked and the items that need attention.
+### Target Audience
+- Global open-source contributors and maintainers.
+- Developers looking for a clean example of AI-assisted engineering.
+- Students and teachers who need an English-only reference for the Jules workflow.
 
-## Expected PR Sequence
+### Why This Case Study Exists
+Case Study A (Digital Logic) is tied to a specific hardware/software capstone. Case Study B exists to show that the starter kit's workflow is reusable for any software project, emphasizing clarity and English-only collaboration for global readability.
 
-1. **PR 1: Scaffolding** — basic project structure, dependency management, and a minimal CLI.
-2. **PR 2: Link extraction** — core parsing logic with unit tests.
-3. **PR 3: Local checks** — file system existence checks for relative links.
-4. **PR 4: External link reporting** — external link status reporting with timeout handling.
-5. **PR 5: Reporting** — clear console output and summary behavior.
+### What It Demonstrates
+- **Jules as an AI Coding Agent:** Jules handles implementation while the human maintainer leads architecture and review.
+- **GitHub-Native Workflow:** Strict adherence to `Issue → Jules Task → Pull Request → CI → Human Review → Merge`.
+- **Small, Scoped Issues:** Breaking down a project into tasks that an AI can handle with high quality and low noise.
+- **Visible Engineering History:** Readable PR descriptions, clear CI status, and meaningful human review comments.
 
-Each PR should follow the same sequence:
+---
 
+## Technical Plan
+
+### Initial Repository Structure
 ```text
-Issue → Jules task → Pull request → CI → Human review → Merge
+.
+├── AGENTS.md (copied from starter kit)
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/
+│       └── ci.yml
+├── src/
+│   ├── main.py (or index.ts/main.go)
+│   └── parser.py
+├── tests/
+├── docs/
+├── README.md
+├── LICENSE
+└── requirements.txt (or package.json/go.mod)
 ```
 
-## CI Requirements
+### CI Plan
+- **Linting:** Standard style checks for the chosen language.
+- **Unit Tests:** Automated test suite running on every PR via GitHub Actions.
+- **Markdown Hygiene:** Use the same script from this starter kit to validate the project's own docs.
 
-- **Linting:** Standard linting rules for the chosen language.
-- **Tests:** Automated test suite running on every PR via GitHub Actions.
-- **Documentation hygiene:** Markdown checks for the project's own documentation.
+### Review Plan
+- **Architecture Review:** Maintainer ensures the logic for link extraction and validation is sound.
+- **Quality Review:** Maintainer checks for edge cases (e.g., malformed URLs, missing files).
+- **Workflow Review:** Maintainer verifies that Jules followed the PR template and linked the correct issue.
 
-## Review Examples to Capture
+---
 
-- **Approval:** A review where the maintainer confirms the link parser handles the intended Markdown formats.
-- **Change request:** A review where the maintainer asks Jules to add a timeout to external link reporting.
-- **Refinement:** A review where the maintainer suggests a clearer error message for missing files.
+## First 5 GitHub Issues
 
-## Completion Criteria
+### Issue 1: Initialize Project Scaffolding
+- **Goal:** Set up the basic project structure and a "Hello World" CLI.
+- **Scope:** Create `AGENTS.md`, `.github/` templates, a minimal `main` script, and a `README.md`.
+- **Jules Workflow:** Jules initializes files and opens a PR showing the scaffold.
+- **Validation:** Run the CLI and confirm it prints a start message.
 
-This planned brief can be replaced by the real case study once the following are met:
+### Issue 2: Implement Markdown Link Extraction
+- **Goal:** Parse `[text](url)` patterns from a Markdown file.
+- **Scope:** Create a parser module and unit tests with various link formats.
+- **Jules Workflow:** Jules writes the extraction logic and tests.
+- **Validation:** Tests pass for standard, relative, and absolute links.
 
-1. The separate repository is created and public.
-2. At least 5 Jules-assisted PRs have been merged following the workflow.
-3. The repository includes a clear README and CI status.
-4. Representative issues, PR descriptions, CI runs, and human reviews are linked in the final case study document.
+### Issue 3: Add Internal Link Validation
+- **Goal:** Verify that relative links point to actual files on disk.
+- **Scope:** Implement file existence checks for links starting with `./` or `../`.
+- **Jules Workflow:** Jules adds the filesystem check logic and updates tests.
+- **Validation:** Tool reports failure for a link to a non-existent file.
 
-## Maintainer Notes
+### Issue 4: Add External Link Reporting
+- **Goal:** Check if external URLs return a successful status code.
+- **Scope:** Add a basic HTTP client check with a short timeout.
+- **Jules Workflow:** Jules implements the network check and handles timeouts.
+- **Validation:** Tool flags broken URLs (e.g., 404) while respecting the timeout.
 
-When this case study is selected, replace this planned brief with:
+### Issue 5: Implement Summary Reporter
+- **Goal:** Provide a clear console output with results.
+- **Scope:** Add a summary showing: Total links, Passed, Failed (with reasons).
+- **Jules Workflow:** Jules formats the output and adds final CLI refinements.
+- **Validation:** CLI output is readable and useful for CI/manual runs.
 
-- repository link
-- project summary
-- selected issues
-- representative Jules-assisted PRs
-- review examples
-- CI results
-- lessons learned
+---
+
+## Acceptance Criteria for the Case Study
+1. The separate `md-link-linter` repository is public.
+2. At least 5 Jules-assisted PRs have been merged following the **Review-Driven** track.
+3. Jules is clearly framed as an **AI coding agent** in all PRs and the `AGENTS.md` file.
+4. **Human maintainer ownership** is explicit in every merge and review comment.
+5. The case study document in this repo is updated with links to the live project.
+
+---
+
+## Management
+
+### Non-Goals
+- Building a "perfect" or "production-grade" link checker with complex edge case handling.
+- Claiming Jules can work without human review.
+- Adding non-English documentation or comments.
+- Using promotional language or seeking stars for the demo repo.
+
+### Risks and Mitigations
+- **Risk:** Jules makes logical errors in link parsing.
+  - **Mitigation:** Maintainer review is mandatory; unit tests must cover edge cases.
+- **Risk:** External link checks make CI slow or flaky.
+  - **Mitigation:** Implement strict timeouts and allow the tool to run in "local-only" mode.
+- **Risk:** The demo repo becomes stale.
+  - **Mitigation:** Keep the scope small so it can be completed and "frozen" as a successful example.
+
+### Connection to Starter Kit
+This project uses the exact `AGENTS.md`, issue templates, and workflow tracks defined in the **AI Coding Workflow Starter Kit**. It serves as the primary "living example" for global users who want to see the kit in action.

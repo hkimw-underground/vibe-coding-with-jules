@@ -16,7 +16,7 @@ This checklist is used by maintainers to ensure high quality and consistency acr
 
 ## 3. Content Consistency
 
-- [ ] **Case Study Status**: [Case Study A](../case-studies/digital-logic-circuit.md) is marked as complete, and [Case Study B](../case-studies/english-only-project.md) is marked as planned (unless updated).
+- [ ] **Case Study Status**: [Case Study A](../case-studies/digital-logic-circuit.md) is marked as complete, and [Case Study B](../case-studies/english-only-project.md) is an actionable brief.
 - [ ] **Workflow Separation**: Recommended workflows (Level 1-3) are clearly distinguished from experimental or sandbox workflows (Level 5-6).
 - [ ] **Safeguard Language**: Branch protection and CI gates are described as "safeguards" or "gates," not absolute guarantees of code quality or security.
 - [ ] **Bilingual Alignment**: Top-level structural changes in `README.md` are reflected in `README.ko.md` to maintain parity.

@@ -16,7 +16,7 @@ This checklist is used by maintainers to verify that the repository is ready for
 - [ ] **Document Tree Consistency**: The `Repository Structure` in the README matches the actual file tree.
 - [ ] **Quickstart Discoverability**: The [Quickstart Guide](../quickstart.md) is easy to find from the README.
 - [ ] **Examples Discoverability**: [Reference Examples](../../examples/) are clearly linked and accessible.
-- [ ] **Case Study Clarity**: Status for [Case Study A](../case-studies/digital-logic-circuit.md) (complete) and [Case Study B](../case-studies/english-only-project.md) (planned placeholder) is clearly stated.
+- [ ] **Case Study Clarity**: Status for [Case Study A](../case-studies/digital-logic-circuit.md) (complete) and [Case Study B](../case-studies/english-only-project.md) (actionable plan) is clearly stated.
 
 ## 3. Workflow & Safety
 

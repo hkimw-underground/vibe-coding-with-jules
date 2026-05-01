@@ -25,12 +25,12 @@ Unlike collections of "magic prompts," this project focuses on the **engineering
 - [x] **Bilingual Support**: Key README documentation is available in both English and Korean.
 - [x] **Structural Integrity**: A dedicated CI workflow ensures all required starter kit files are present.
 - [x] **Validation Gates**: Markdown and YAML syntax checks run for documentation and template changes.
-- [x] **Practical Evidence**: Case Study A documents the workflow in a real project, while Case Study B is tracked as planned.
+- [x] **Practical Evidence**: Case Study A documents the workflow in a real project, while Case Study B provides an actionable project plan for global audiences.
 - [x] **Community Standards**: Includes Code of Conduct, contributing guidelines, license, and security policy.
 
 ## Current Limitations
 
-- **Case Study B (English-Only)**: Currently planned and documented as a placeholder.
+- **Case Study B (English-Only)**: While the plan is actionable, the separate demonstration repository is yet to be created.
 - **Advanced Workflow Levels**: Levels 4-6, such as daily maintainer reports and sandbox-only automation experiments, are intentionally documented as advanced or experimental.
 - **Automation Scope**: The default workflow does not recommend auto-merge or unattended project changes. Automation should remain gated by CI, branch protection, and human review unless it is explicitly isolated in a sandbox.
 
