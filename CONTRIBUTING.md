@@ -21,6 +21,7 @@ Issue → Jules task → Pull Request → CI → Human Review → Merge
 All changes must start with a GitHub Issue.
 
 - **For standard tasks:** Use the **Jules Task** template. This template is designed to provide clear, scoped instructions for Jules.
+- **For translations:** Use the **Translation** template to propose new translations or improve existing ones.
 - **For experiments:** Use the **Workflow Experiment** template if you are proposing a new automation level or a sandbox experiment.
 
 ### 2. Preparing a Jules Task
