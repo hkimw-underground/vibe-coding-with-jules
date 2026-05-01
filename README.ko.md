@@ -9,15 +9,7 @@
 
 이 저장소는 AI-assisted work가 읽을 수 있는 engineering history를 남기도록 돕습니다.
 
-```mermaid
-graph LR
-    Issue --> Task[Jules task]
-    Task --> PR[Pull request]
-    PR --> CI
-    CI --> Review[Human review]
-    Review --> Merge
-    Review -.->|Request changes| Task
-```
+![Workflow Overview](./docs/assets/workflow-overview.svg)
 
 단순한 prompt 모음이 아니라 template, example, review checklist, CI gate, case study를 포함한 reusable workflow kit입니다.
 
@@ -44,6 +36,8 @@ graph LR
 ---
 
 ## Start Here
+
+![Getting Started Flow](./docs/assets/getting-started-flow.svg)
 
 - **[Quickstart 가이드](./docs/quickstart.md)** — 단계별 온보딩
 - **[운영 가이드](./docs/operations/one-jules-task-at-a-time.md)** — 안전한 태스크 순차 실행
@@ -97,6 +91,8 @@ Merge 전에 다음을 확인합니다.
 ## Workflow Levels
 
 이 starter kit은 안정적인 maintainer workflow와 실험적 automation을 분리합니다.
+
+![Four Tracks Overview](./docs/assets/four-tracks-overview.svg)
 
 | Level | Workflow | Human role | Status |
 | --- | --- | --- | --- |
@@ -204,6 +200,8 @@ Evaluator-driven evolution must use measurable tests or benchmarks.
 대부분의 AI coding demo는 완성된 코드만 보여줍니다.
 
 이 프로젝트는 과정을 보여줍니다.
+
+![Workflow Overview](./docs/assets/workflow-overview.svg)
 
 ```text
 Issue.

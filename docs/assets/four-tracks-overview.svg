@@ -1,0 +1,47 @@
+<svg width="600" height="220" viewBox="0 0 600 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; }
+    .desc { font-size: 11px; }
+    .node { stroke-width: 1.5; }
+
+    @media (prefers-color-scheme: dark) {
+      .title { fill: #adbac7; }
+      .desc { fill: #768390; }
+      .node { fill: #22272e; stroke: #444c56; }
+    }
+    @media (prefers-color-scheme: light) {
+      .title { fill: #24292f; }
+      .desc { fill: #57606a; }
+      .node { fill: #ffffff; stroke: #d0d7de; }
+    }
+  </style>
+
+  <!-- Track 1: Review-Driven -->
+  <rect x="10" y="10" width="280" height="90" rx="6" class="node" />
+  <text x="30" y="35" class="text title">Track 1: Review-Driven (Default)</text>
+  <text x="30" y="55" class="text desc">Human-led workflow. Jules as a contributor.</text>
+  <text x="30" y="70" class="text desc">Issue → Jules PR → Human Review → Merge</text>
+  <text x="30" y="85" class="text desc">Recommended for most production tasks.</text>
+
+  <!-- Track 2: GitHub-Native Collaboration -->
+  <rect x="310" y="10" width="280" height="90" rx="6" class="node" />
+  <text x="330" y="35" class="text title">Track 2: GitHub-Native Collab</text>
+  <text x="330" y="55" class="text desc">Focused on learning GitHub conventions.</text>
+  <text x="330" y="70" class="text desc">Labels, Milestones, and Discussion loops.</text>
+  <text x="330" y="85" class="text desc">Ideal for teams and students.</text>
+
+  <!-- Track 3: Half Vibe Coding -->
+  <rect x="10" y="120" width="280" height="90" rx="6" class="node" />
+  <text x="30" y="145" class="text title">Track 3: Half Vibe Coding</text>
+  <text x="30" y="165" class="text desc">Advanced mode with lower touch.</text>
+  <text x="30" y="180" class="text desc">Strict CI + Jules handles implementation.</text>
+  <text x="30" y="195" class="text desc">Requires trust and solid test coverage.</text>
+
+  <!-- Track 4: Full Vibe Coding -->
+  <rect x="310" y="120" width="280" height="90" rx="6" class="node" />
+  <text x="330" y="145" class="text title">Track 4: Full Vibe Coding</text>
+  <text x="330" y="165" class="text desc">Experimental sandbox automation.</text>
+  <text x="330" y="180" class="text desc">No-human loops and evaluator-driven.</text>
+  <text x="330" y="195" class="text desc">Strictly for sandboxes and experiments.</text>
+</svg>

@@ -9,15 +9,7 @@
 
 It is built for maintainers who want AI-assisted work to leave a clean engineering history:
 
-```mermaid
-graph LR
-    Issue --> Task[Jules task]
-    Task --> PR[Pull request]
-    PR --> CI
-    CI --> Review[Human review]
-    Review --> Merge
-    Review -.->|Request changes| Task
-```
+![Workflow Overview](./docs/assets/workflow-overview.svg)
 
 This is not a prompt dump. It is a reusable workflow kit with templates, examples, review checklists, CI gates, and case studies.
 
@@ -44,6 +36,8 @@ Not:
 ---
 
 ## Start Here
+
+![Getting Started Flow](./docs/assets/getting-started-flow.svg)
 
 - **[Quickstart Guide](./docs/quickstart.md)** — step-by-step onboarding
 - **[Operations Guide](./docs/operations/one-jules-task-at-a-time.md)** — sequencing tasks safely
@@ -97,6 +91,8 @@ Before merging, check:
 ## Workflow Levels
 
 This starter kit separates stable maintainer workflows from experimental automation.
+
+![Four Tracks Overview](./docs/assets/four-tracks-overview.svg)
 
 | Level | Workflow | Human role | Status |
 | --- | --- | --- | --- |
@@ -204,6 +200,8 @@ Evaluator-driven evolution must use measurable tests or benchmarks.
 Most AI coding demos show only the final code.
 
 This project shows the process:
+
+![Workflow Overview](./docs/assets/workflow-overview.svg)
 
 ```text
 Issue.

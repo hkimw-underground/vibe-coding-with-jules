@@ -1,0 +1,67 @@
+<svg width="600" height="150" viewBox="0 0 600 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 12px; }
+    .step-circle { stroke-width: 2; }
+    .step-text { font-weight: 600; font-size: 14px; }
+    .arrow { stroke-width: 1.5; fill: none; }
+
+    @media (prefers-color-scheme: dark) {
+      .text { fill: #adbac7; }
+      .step-text { fill: #adbac7; }
+      .step-circle { fill: #22272e; stroke: #444c56; }
+      .arrow { stroke: #444c56; }
+      .arrow-head { fill: #444c56; }
+    }
+    @media (prefers-color-scheme: light) {
+      .text { fill: #24292f; }
+      .step-text { fill: #24292f; }
+      .step-circle { fill: #ffffff; stroke: #d0d7de; }
+      .arrow { stroke: #d0d7de; }
+      .arrow-head { fill: #d0d7de; }
+    }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" class="arrow-head" />
+    </marker>
+  </defs>
+
+  <!-- Step 1 -->
+  <circle cx="50" cy="50" r="25" class="step-circle" />
+  <text x="50" y="55" text-anchor="middle" class="step-text">1</text>
+  <text x="50" y="100" text-anchor="middle" class="text">Copy</text>
+  <text x="50" y="115" text-anchor="middle" class="text">Starter Kit</text>
+
+  <line x1="80" y1="50" x2="130" y2="50" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Step 2 -->
+  <circle cx="170" cy="50" r="25" class="step-circle" />
+  <text x="170" y="55" text-anchor="middle" class="step-text">2</text>
+  <text x="170" y="100" text-anchor="middle" class="text">Open</text>
+  <text x="170" y="115" text-anchor="middle" class="text">Small Issue</text>
+
+  <line x1="200" y1="50" x2="250" y2="50" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Step 3 -->
+  <circle cx="290" cy="50" r="25" class="step-circle" />
+  <text x="290" y="55" text-anchor="middle" class="step-text">3</text>
+  <text x="290" y="100" text-anchor="middle" class="text">Trigger</text>
+  <text x="290" y="115" text-anchor="middle" class="text">Jules Task</text>
+
+  <line x1="320" y1="50" x2="370" y2="50" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Step 4 -->
+  <circle cx="410" cy="50" r="25" class="step-circle" />
+  <text x="410" y="55" text-anchor="middle" class="step-text">4</text>
+  <text x="410" y="100" text-anchor="middle" class="text">Review</text>
+  <text x="410" y="115" text-anchor="middle" class="text">Jules PR</text>
+
+  <line x1="440" y1="50" x2="490" y2="50" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Step 5 -->
+  <circle cx="530" cy="50" r="25" class="step-circle" />
+  <text x="530" y="55" text-anchor="middle" class="step-text">5</text>
+  <text x="530" y="100" text-anchor="middle" class="text">Merge</text>
+  <text x="530" y="115" text-anchor="middle" class="text">to main</text>
+</svg>

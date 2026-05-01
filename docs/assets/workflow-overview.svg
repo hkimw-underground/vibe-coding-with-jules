@@ -1,0 +1,56 @@
+<svg width="850" height="150" viewBox="0 0 850 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 13px; }
+    .node { stroke-width: 1.5; }
+    .arrow { stroke-width: 1.5; fill: none; }
+
+    @media (prefers-color-scheme: dark) {
+      .text { fill: #adbac7; }
+      .node { fill: #22272e; stroke: #444c56; }
+      .arrow { stroke: #444c56; }
+      .arrow-head { fill: #444c56; }
+    }
+    @media (prefers-color-scheme: light) {
+      .text { fill: #24292f; }
+      .node { fill: #ffffff; stroke: #d0d7de; }
+      .arrow { stroke: #d0d7de; }
+      .arrow-head { fill: #d0d7de; }
+    }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" class="arrow-head" />
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <rect x="10" y="55" width="90" height="40" rx="4" class="node" />
+  <text x="55" y="80" text-anchor="middle" class="text">Issue</text>
+
+  <rect x="150" y="55" width="90" height="40" rx="4" class="node" />
+  <text x="195" y="80" text-anchor="middle" class="text">Jules Task</text>
+
+  <rect x="290" y="55" width="100" height="40" rx="4" class="node" />
+  <text x="340" y="80" text-anchor="middle" class="text">Pull Request</text>
+
+  <rect x="440" y="55" width="90" height="40" rx="4" class="node" />
+  <text x="485" y="80" text-anchor="middle" class="text">CI Check</text>
+
+  <rect x="580" y="55" width="110" height="40" rx="4" class="node" />
+  <text x="635" y="80" text-anchor="middle" class="text">Human Review</text>
+
+  <rect x="740" y="55" width="80" height="40" rx="4" class="node" />
+  <text x="780" y="80" text-anchor="middle" class="text">Merge</text>
+
+  <!-- Arrows -->
+  <line x1="100" y1="75" x2="150" y2="75" class="arrow" marker-end="url(#arrowhead)" />
+  <line x1="240" y1="75" x2="290" y2="75" class="arrow" marker-end="url(#arrowhead)" />
+  <line x1="390" y1="75" x2="440" y2="75" class="arrow" marker-end="url(#arrowhead)" />
+  <line x1="530" y1="75" x2="580" y2="75" class="arrow" marker-end="url(#arrowhead)" />
+  <line x1="690" y1="75" x2="740" y2="75" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Feedback Loop -->
+  <path d="M635 55 V30 H195 V55" stroke-dasharray="4" class="arrow" marker-end="url(#arrowhead)" />
+  <text x="415" y="25" text-anchor="middle" class="text" style="font-size: 11px;">Request Changes</text>
+</svg>
