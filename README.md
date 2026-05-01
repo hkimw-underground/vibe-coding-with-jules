@@ -92,6 +92,7 @@ The maintainer stays responsible for scope, architecture, validation, and the fi
 
 - [Quickstart](./docs/quickstart.md)
 - [Jules Web UI Guide](./docs/jules-web-ui.md)
+- [First Contributions Guide](./docs/contributing/first-contributions.md)
 - [Translation Guide](./docs/contributing/translations.md)
 - [One Jules Task at a Time](./docs/operations/one-jules-task-at-a-time.md)
 - [Branch Protection and CI Gates](./docs/operations/branch-protection-and-ci-gates.md)
@@ -142,6 +143,8 @@ Evaluator-driven experiments need measurable tests or benchmarks.
 ├── docs/
 │   ├── assets/
 │   ├── contributing/
+│   │   ├── first-contributions.md
+│   │   └── translations.md
 │   ├── jules-web-ui.md
 │   ├── quickstart.md
 │   ├── case-studies/
