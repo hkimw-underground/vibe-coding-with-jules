@@ -118,6 +118,7 @@ jobs:
             ".github/ISSUE_TEMPLATE/jules_task.yml"
             ".github/ISSUE_TEMPLATE/workflow_experiment.yml"
             ".github/ISSUE_TEMPLATE/translation.yml"
+            "docs/showcase.md"
             "docs/quickstart.md"
             "docs/jules-web-ui.md"
             "docs/contributing/first-contributions.md"
