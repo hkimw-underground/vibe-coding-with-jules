@@ -50,6 +50,19 @@ Not:
 - **[Branch Protection Guide](./docs/operations/branch-protection-and-ci-gates.md)** — CI gates and protecting `main`
 - **[Labels and Triage Guide](./docs/operations/labels-and-triage.md)** — organizing AI tasks
 
+---
+
+## Workflow Tracks
+
+Choose the track that fits your project maturity and team size:
+
+- **[GitHub-Native Collaboration](./docs/tracks/github-native-collaboration.md)** — best for learning real GitHub teamwork with Jules
+- **[Review-Driven](./docs/tracks/review-driven.md)** — **recommended default** workflow for production
+- **[Half Vibe Coding](./docs/tracks/half-vibe-coding.md)** — advanced, low-touch workflow with periodic human direction
+- **[Full Vibe Coding](./docs/tracks/full-vibe-coding.md)** — **experimental** sandbox workflow, not for production
+
+---
+
 ### 1. Copy the Starter Kit Files
 
 Start with these files in your own repository:

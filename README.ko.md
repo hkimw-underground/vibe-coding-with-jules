@@ -50,6 +50,19 @@ graph LR
 - **[브랜치 보호 가이드](./docs/operations/branch-protection-and-ci-gates.md)** — CI 게이트와 `main` 보호
 - **[라벨 및 트리아지 가이드](./docs/operations/labels-and-triage.md)** — AI 태스크 정리
 
+---
+
+## Workflow Tracks
+
+프로젝트의 성숙도와 팀 규모에 맞는 트랙을 선택하세요.
+
+- **[GitHub-Native Collaboration](./docs/tracks/github-native-collaboration.md)** — Jules와 함께 실제 GitHub 협업을 배우기에 최적
+- **[Review-Driven](./docs/tracks/review-driven.md)** — 프로덕션을 위한 **권장 기본** 워크플로우
+- **[Half Vibe Coding](./docs/tracks/half-vibe-coding.md)** — 주기적인 사람의 개입이 포함된 고급 저접촉(low-touch) 워크플로우
+- **[Full Vibe Coding](./docs/tracks/full-vibe-coding.md)** — 프로덕션용이 아닌 **실험적** 샌드박스 워크플로우
+
+---
+
 ### 1. Starter Kit 파일 복사하기
 
 자기 repository에 먼저 아래 파일들을 복사합니다.
