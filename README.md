@@ -1,147 +1,73 @@
 # AI Coding Workflow Starter Kit for Jules
 
-[English](./README.md) · [한국어](./README.ko.md) · [Quickstart](./docs/quickstart.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Launch Checklist](./docs/meta/release-checklist.md) · [Contributing](./CONTRIBUTING.md) · [Security](./SECURITY.md)
+[English](./README.md) · [한국어](./README.ko.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Launch Checklist](./docs/meta/release-checklist.md) · [Contributing](./CONTRIBUTING.md) · [Code of Conduct](./CODE_OF_CONDUCT.md) · [Security](./SECURITY.md)
 
 > Most AI coding demos show only the final code.  
 > This project shows the process.
 
-**AI Coding Workflow Starter Kit for Jules** is a GitHub-native playbook for working with Jules through issues, pull requests, reviews, CI, case studies, and controlled workflow experiments.
-
-It is built for students, teachers, first-time maintainers, and small teams who want AI-assisted coding work to leave a readable engineering history.
-
-This is not a prompt dump. It is a reusable starter kit for running AI-assisted work inside normal GitHub practice.
+**AI Coding Workflow Starter Kit for Jules** is a GitHub-native playbook for leading Jules—an AI coding agent—through a professional engineering process. It moves AI-assisted work out of "magic prompts" and into issues, pull requests, reviews, and CI.
 
 ---
 
 ## Choose Your Track
 
-Pick the workflow that matches how much human involvement you want.
+How do you want to work with Jules? Pick the track that fits your goals.
 
-| Track | Best for | Human involvement | Status |
+| Track | Goal | Recommended for | Level |
 | --- | --- | --- | --- |
-| **Review-Driven** | Real projects, classrooms, starter repos | Medium | **Recommended default** |
-| **GitHub-Native Collaboration** | Learning Issues, PRs, reviews, CI, labels, and branch protection | Medium | Recommended for learning |
-| **Half Vibe Coding** | Direction from a maintainer, execution by Jules between checkpoints | Low | Advanced |
-| **Full Vibe Coding** | Sandbox experiments and workflow research | Minimal | Experimental only |
-
-Recommended path for most readers:
-
-```text
-Start with Review-Driven.
-Use GitHub-Native Collaboration when teaching or learning teamwork.
-Try Half Vibe Coding only after CI and review rules are in place.
-Keep Full Vibe Coding in sandbox repositories or protected branches.
-```
+| **Review-Driven** | **Default.** High quality, clean history. | Everyone | 1 |
+| **GitHub-Native Collaboration** | Learning the professional workflow. | Students & Teachers | 1 |
+| **Half Vibe Coding** | Low-touch, fast iteration with CI gates. | Advanced users | 2-3 |
+| **Full Vibe Coding** | **Experimental.** Autonomous sandboxing. | Researchers | 5-6 |
 
 ---
 
 ## Start Here
 
-1. Read the **[Quickstart Guide](./docs/quickstart.md)**.
-2. Copy the starter files into your repository.
-3. Open a small GitHub Issue.
-4. Let Jules create a focused pull request.
-5. Review the PR, check CI, and merge only when the maintainer is satisfied.
-
-Starter files to copy first:
-
-```text
-AGENTS.md
-.github/ISSUE_TEMPLATE/
-.github/PULL_REQUEST_TEMPLATE.md
-.github/workflows/docs-and-templates.yml
-prompts/
-examples/
-```
+1. **[Quickstart Guide](./docs/quickstart.md)** — Step-by-step onboarding for your first Jules task.
+2. **Copy the Starter Kit** — Add `AGENTS.md`, `.github/`, and `prompts/` to your repository.
+3. **Open an Issue** — Define a small, scoped task for Jules to solve.
+4. **Review & Merge** — Lead Jules through the PR and CI process.
 
 ---
 
-## Default Workflow
+## How the Default Workflow Works
 
-The default workflow is **Review-Driven**:
+The **Review-Driven** track is our recommended standard. It ensures that humans remain in control of the architecture while Jules handles the implementation.
 
-```text
-Issue → Jules task → Pull request → CI → Human review → Merge
-```
-
-The maintainer stays responsible for scope, architecture, validation, and the final merge decision. Jules assists with implementation and documentation work through the GitHub workflow.
+1. **Issue**: A human maintainer defines a scoped task.
+2. **Task**: Jules plans and implements the change.
+3. **Pull Request**: Jules opens a PR linked to the issue.
+4. **CI**: Automated checks validate the change.
+5. **Review**: A human maintainer reviews the code and requests changes if needed.
+6. **Merge**: The human maintainer makes the final decision to merge.
 
 ---
 
 ## What This Repo Includes
 
-- **AGENTS.md** — repository rules for Jules-assisted work
-- **Issue templates** — scoped task and workflow experiment templates
-- **PR template** — linked issue, validation, and review expectations
-- **CI example** — lightweight checks for docs and starter kit structure
-- **Prompts** — issue handoff and maintainer report prompts
-- **Examples** — reusable issue and PR review examples
-- **Operations guides** — one-task-at-a-time, branch protection, labels, and triage
-- **Case studies** — one real applied case study and one planned English-only case study
-
----
-
-## Key Guides
-
-- [Quickstart](./docs/quickstart.md)
-- [One Jules Task at a Time](./docs/operations/one-jules-task-at-a-time.md)
-- [Branch Protection and CI Gates](./docs/operations/branch-protection-and-ci-gates.md)
-- [Labels and Triage](./docs/operations/labels-and-triage.md)
-- [Project Readiness](./docs/meta/project-readiness.md)
-- [Documentation Audit](./docs/meta/documentation-audit.md)
+- **Scoped Issue Templates**: Pre-configured for Jules tasks and experiments.
+- **PR Templates**: Standardized format with validation checklists.
+- **Workflow Levels**: From human-led tasks to experimental autonomy.
+- **Reference Examples**: Real-world issues and maintainer review examples.
+- **CI Validation**: Lightweight checks for Markdown and YAML hygiene.
+- **Reusable Prompts**: Templates for handoffs and status reporting.
 
 ---
 
 ## Case Studies
 
-- **[Case Study A: Digital Logic Circuit](./docs/case-studies/digital-logic-circuit.md)** — a real hardware/software capstone project using the Jules workflow.
-- **[Case Study B: English-Only Project Brief](./docs/case-studies/english-only-project.md)** — a planned small open-source project for showing the same workflow to a global audience.
+- **[Case Study A: Digital Logic Circuit](./docs/case-studies/digital-logic-circuit.md)** — A hardware/software capstone project using the Jules workflow.
+- **[Case Study B: md-link-linter](./docs/case-studies/english-only-project.md)** — (Planned) A minimalist Markdown link checker built with a CI-first approach.
 
 ---
 
-## Safety and Ownership
+## Safety & Ownership
 
-Stable guidance:
-
-```text
-Human decides direction.
-Human owns architecture.
-Human reviews final changes.
-CI gates every merge.
-Jules is an AI coding agent, not a human contributor.
-```
-
-Experimental guidance:
-
-```text
-Autonomous workflows belong in sandbox repos or protected branches.
-Auto-merge experiments require strict CI and branch protection.
-Evaluator-driven experiments need measurable tests or benchmarks.
-```
-
----
-
-## Repository Structure
-
-```text
-.
-├── AGENTS.md
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── workflows/
-├── docs/
-│   ├── quickstart.md
-│   ├── case-studies/
-│   ├── experiments/
-│   ├── meta/
-│   ├── operations/
-│   └── workflows/
-├── examples/
-│   ├── issues/
-│   └── pr-reviews/
-└── prompts/
-```
+- **Human-Led**: A human decides the direction and owns the architecture.
+- **Jules as an Agent**: Jules is an AI coding agent, not a human contributor.
+- **CI Gates**: Every merge should be gated by automated checks.
+- **Sandbox for Experiments**: Full Vibe Coding must stay in sandbox environments.
 
 ---
 
