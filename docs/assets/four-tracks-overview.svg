@@ -20,7 +20,7 @@
   <!-- Track 1: Review-Driven -->
   <rect x="10" y="10" width="280" height="90" rx="6" class="node" />
   <text x="30" y="35" class="text title">Track 1: Review-Driven (Default)</text>
-  <text x="30" y="55" class="text desc">Human-led workflow. Jules as a contributor.</text>
+  <text x="30" y="55" class="text desc">Human-led workflow. Jules assists as agent.</text>
   <text x="30" y="70" class="text desc">Issue → Jules PR → Human Review → Merge</text>
   <text x="30" y="85" class="text desc">Recommended for most production tasks.</text>
 
