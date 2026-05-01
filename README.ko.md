@@ -9,6 +9,8 @@
 
 이 저장소는 학생, 교사, GitHub를 처음 쓰는 maintainer, 작은 팀이 AI-assisted coding work를 읽을 수 있는 engineering history로 남기도록 돕습니다.
 
+![Workflow overview](./docs/assets/workflow-overview.svg)
+
 단순한 prompt 모음이 아닙니다. 일반적인 GitHub practice 안에서 AI-assisted work를 운영하기 위한 reusable starter kit입니다.
 
 ---
@@ -16,6 +18,8 @@
 ## 트랙 선택하기
 
 원하는 인간 개입 수준에 맞는 workflow를 고르세요.
+
+![Four workflow tracks](./docs/assets/four-tracks-overview.svg)
 
 | 트랙 | 적합한 상황 | 인간 개입 | 상태 |
 | --- | --- | --- | --- |
@@ -36,6 +40,8 @@ Full Vibe Coding은 sandbox repo 또는 protected branch에서만 다룹니다.
 ---
 
 ## 시작하기
+
+![Getting started flow](./docs/assets/getting-started-flow.svg)
 
 1. **[Quickstart Guide](./docs/quickstart.md)**를 읽습니다.
 2. starter file을 자신의 repository에 복사합니다.
@@ -132,6 +138,7 @@ Evaluator-driven experiments need measurable tests or benchmarks.
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   └── workflows/
 ├── docs/
+│   ├── assets/
 │   ├── quickstart.md
 │   ├── case-studies/
 │   ├── experiments/
