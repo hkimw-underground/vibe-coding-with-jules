@@ -2,90 +2,116 @@
 
 Status: planned.
 
-This case study will document a clean English-only open-source project using the same Jules workflow shown in this starter kit.
+This case study documents a clean English-only open-source project using the same Jules workflow shown in this starter kit.
 
-## Purpose
+## Project Goal
 
-Case Study B exists to show that the workflow is reusable outside a school or capstone context, specifically for a global audience using English as the primary language for code, documentation, and collaboration.
+Build a small documentation and tooling-oriented project that allows readers to understand the entire repository quickly while remaining real enough to show issues, pull requests, CI, review comments, and maintainer decisions.
 
-It should demonstrate:
+## Recommended Project Direction
 
-- Small GitHub Issues
-- Focused Jules-assisted pull requests
-- CI-first development
+**Recommended Repository Name:** `github-workflow-lab`
+
+**Proposed Repository Name Options:**
+- `github-workflow-lab`
+- `jules-workflow-demo-notes`
+- `issue-driven-docs-demo`
+- `tiny-maintainer-playbook`
+
+### Target Audience
+
+The target audience includes students, teachers, first-time open-source maintainers, and developers looking for practical examples of an AI-assisted development process that leaves a readable GitHub history.
+
+### Why This Case Study Exists
+
+Case Study B exists to show that the workflow is reusable outside a school or capstone context. It provides a clean example for a global audience using English as the primary language for code, documentation, and collaboration. It makes the starter kit easier to trust for global readers.
+
+### What It Demonstrates About the Jules Workflow
+
+This project demonstrates:
+- Small, focused GitHub Issues
+- Jules as an AI coding agent generating scoped pull requests
+- CI-first development (validating Markdown hygiene and links)
 - Readable human review comments
-- Clear separation between AI agent work and maintainer ownership
+- Clear separation between AI agent work and human maintainer ownership
+- Review-Driven as the default workflow track
 
-## Recommended Project: `md-link-linter`
+## Initial Repository Structure
 
-To demonstrate the workflow, Case Study B recommends building a minimalist Markdown link checker CLI tool.
+Before the first issue, the repository will contain basic scaffolding:
 
-**Description:** A command-line tool that scans Markdown files and reports internal or external links that need attention.
+```text
+github-workflow-lab/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   └── jules_task.yml
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/
+│       └── validate.yml
+├── docs/
+│   └── index.md
+├── README.md
+├── AGENTS.md
+└── LICENSE
+```
 
-### Project Constraints
+## First 5 GitHub Issues
 
-- **English-only:** All code, comments, issues, and documentation should be in English.
-- **Small surface:** Focus on core functionality, such as parsing links and reporting status, rather than complex edge cases.
-- **Testability:** The project should support automated unit tests for link parsing and reporting behavior.
-- **Issue-sized tasks:** Issues should be small enough to be completed in focused PRs with limited file changes.
+1. **Add Markdown linting to CI:** Set up a step in `.github/workflows/validate.yml` to check for trailing spaces and required newlines in Markdown files.
+2. **Create repository setup guide:** Add `docs/setup.md` explaining how to clone the repository and run the new validation script locally.
+3. **Add broken link checker:** Add a step to the CI workflow that verifies all internal relative links in the documentation point to existing files.
+4. **Draft maintainer review guidelines:** Create `docs/review-guidelines.md` detailing how a human maintainer should review PRs created by Jules.
+5. **Update README with project index:** Update `README.md` to include a table of contents linking to all files in the `docs/` directory.
 
-### Repository Name Options
+## Expected Jules Workflow for Each Issue
 
-- `md-link-linter`
-- `link-check-mini`
-- `simple-md-link-checker`
+For every issue, the maintainer and Jules will follow the Review-Driven workflow:
 
-## First 5 Starter Issues for Jules
-
-1. **Initialize CLI project structure:** Set up a basic project structure with a CLI entry point that accepts a file path and prints `Checking [file]...`.
-2. **Implement Markdown link extractor:** Write a parser to extract Markdown-style links such as `[text](url)` from a given file.
-3. **Add internal link validation:** Implement a check to verify that internal relative links, such as `./docs/setup.md`, point to existing files on disk.
-4. **Add external link reporting:** Add basic status reporting for external links with a clear timeout policy.
-5. **Implement summary reporter:** Add a final report to the CLI output showing the total number of links checked and the items that need attention.
-
-## Expected PR Sequence
-
-1. **PR 1: Scaffolding** — basic project structure, dependency management, and a minimal CLI.
-2. **PR 2: Link extraction** — core parsing logic with unit tests.
-3. **PR 3: Local checks** — file system existence checks for relative links.
-4. **PR 4: External link reporting** — external link status reporting with timeout handling.
-5. **PR 5: Reporting** — clear console output and summary behavior.
-
-Each PR should follow the same sequence:
+1. **Issue Creation:** The human maintainer opens a scoped GitHub issue detailing the requirement.
+2. **Jules Task:** The maintainer assigns the task to Jules, ensuring the scope matches the issue.
+3. **Pull Request:** Jules (the AI coding agent) creates a small, focused pull request with the necessary changes.
+4. **CI Validation:** Automated checks (Markdown linting, link checking) run against the PR.
+5. **Human Review:** The maintainer reviews the changes, leaving readable comments for approvals or change requests.
+6. **Merge:** After CI passes and the maintainer approves, the maintainer merges the PR.
 
 ```text
 Issue → Jules task → Pull request → CI → Human review → Merge
 ```
 
-## CI Requirements
+## CI Plan
 
-- **Linting:** Standard linting rules for the chosen language.
-- **Tests:** Automated test suite running on every PR via GitHub Actions.
-- **Documentation hygiene:** Markdown checks for the project's own documentation.
+- **Validation Checks:** GitHub Actions will enforce Markdown hygiene (no tabs, required newlines, specific trailing space rules) on every PR.
+- **Link Checking:** A script will ensure all internal relative links resolve correctly.
 
-## Review Examples to Capture
+## Review Plan
 
-- **Approval:** A review where the maintainer confirms the link parser handles the intended Markdown formats.
-- **Change request:** A review where the maintainer asks Jules to add a timeout to external link reporting.
-- **Refinement:** A review where the maintainer suggests a clearer error message for missing files.
+- **Human Ownership:** The human maintainer owns the architecture, validation, review, and final merge decision.
+- **Review Examples:** The case study will capture real review scenarios, such as confirming correct link structures, requesting clearer documentation wording, or asking Jules to fix a failing CI check.
 
-## Completion Criteria
+## Risks and Mitigations
+
+- **Risk:** Jules modifies files outside the issue scope.
+  - **Mitigation:** Rely on the Review-Driven track. The maintainer will request changes to revert out-of-scope edits before merging.
+- **Risk:** CI checks fail due to incorrect Markdown formatting.
+  - **Mitigation:** The issue templates and `AGENTS.md` will explicitly state the formatting rules. CI gates will prevent merging until Jules fixes the formatting.
+- **Risk:** The repository becomes too complex for a quick demo.
+  - **Mitigation:** Keep the project strictly focused on documentation and simple validation scripts. Avoid building a large application.
+
+## Acceptance Criteria for the Case Study
 
 This planned brief can be replaced by the real case study once the following are met:
 
-1. The separate repository is created and public.
-2. At least 5 Jules-assisted PRs have been merged following the workflow.
-3. The repository includes a clear README and CI status.
-4. Representative issues, PR descriptions, CI runs, and human reviews are linked in the final case study document.
+- The separate `github-workflow-lab` repository is created and public.
+- At least 5 Jules-assisted PRs have been merged following the Review-Driven workflow.
+- The repository includes a clear README, CI status, and documented review examples.
+- Representative issues, PR descriptions, CI runs, and human reviews are linked in the final case study document.
 
-## Maintainer Notes
+## Non-Goals
 
-When this case study is selected, replace this planned brief with:
+- Do not claim Jules can safely work without human review in production.
+- Do not present Jules as a human contributor; always frame it as an AI coding agent.
+- Do not use promotional language or mention external rankings or lists.
 
-- repository link
-- project summary
-- selected issues
-- representative Jules-assisted PRs
-- review examples
-- CI results
-- lessons learned
+## Connection Back to This Starter Kit
+
+This case study is a direct application of the AI Coding Workflow Starter Kit for Jules. It uses the same `.github` templates, `AGENTS.md` guidelines, and Review-Driven track defined in the starter kit, proving that the workflow is adaptable to standard, English-only open-source repositories.
