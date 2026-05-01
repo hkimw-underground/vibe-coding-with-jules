@@ -96,6 +96,8 @@ Maintainer는 scope, architecture, validation, final merge decision을 계속 �
 - [Labels and Triage](./docs/operations/labels-and-triage.md)
 - [Project Readiness](./docs/meta/project-readiness.md)
 - [Documentation Audit](./docs/meta/documentation-audit.md)
+- [Jules 웹 UI 가이드](./docs/jules-web-ui.md)
+- [번역 가이드](./docs/contributing/translations.md)
 
 ---
 
@@ -140,7 +142,9 @@ Evaluator-driven experiments need measurable tests or benchmarks.
 ├── docs/
 │   ├── assets/
 │   ├── quickstart.md
+│   ├── jules-web-ui.md
 │   ├── case-studies/
+│   ├── contributing/
 │   ├── experiments/
 │   ├── meta/
 │   ├── operations/

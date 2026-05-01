@@ -36,6 +36,10 @@ A good Jules task is scoped and specific. Avoid vague requests like "improve the
 - **Validation Notes:** Jules must document how the changes were validated in the PR description. This includes passing CI and any manual checks performed.
 - **Maintainer Review:** Human maintainers must review every PR. Do not self-merge.
 
+## Translations
+
+We welcome translation contributors to help make this starter kit useful for a global audience! English is our source language for public docs, and Korean is maintained as a companion language. If you'd like to translate the guides into another language, please read our [Translation Guide](./docs/contributing/translations.md) for instructions on how to get started and the guidelines to follow.
+
 ## Documentation Standards
 
 ### Multi-language Support

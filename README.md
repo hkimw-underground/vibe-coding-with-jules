@@ -96,6 +96,8 @@ The maintainer stays responsible for scope, architecture, validation, and the fi
 - [Labels and Triage](./docs/operations/labels-and-triage.md)
 - [Project Readiness](./docs/meta/project-readiness.md)
 - [Documentation Audit](./docs/meta/documentation-audit.md)
+- [Jules Web UI Guide](./docs/jules-web-ui.md)
+- [Translations](./docs/contributing/translations.md)
 
 ---
 
@@ -140,7 +142,9 @@ Evaluator-driven experiments need measurable tests or benchmarks.
 ├── docs/
 │   ├── assets/
 │   ├── quickstart.md
+│   ├── jules-web-ui.md
 │   ├── case-studies/
+│   ├── contributing/
 │   ├── experiments/
 │   ├── meta/
 │   ├── operations/
