@@ -1,0 +1,66 @@
+name: Translation
+about: Propose a new translation or an improvement to an existing translation
+title: "[Translation] "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to the translations of the AI Coding Workflow Starter Kit!
+        **Important:** Jules is an AI coding agent, not a human contributor. Contributors are not required to use Jules.
+  - type: input
+    id: target_language
+    attributes:
+      label: Target Language
+      description: What language are you translating into? (e.g., Korean, Spanish, French)
+    validations:
+      required: true
+  - type: input
+    id: document_or_section
+    attributes:
+      label: Document or Section to Translate
+      description: Which document or specific section are you targeting?
+    validations:
+      required: true
+  - type: dropdown
+    id: translation_type
+    attributes:
+      label: Translation Type
+      options:
+        - New translation
+        - Improvement to existing translation
+    validations:
+      required: true
+  - type: input
+    id: source_document_link
+    attributes:
+      label: Source Document Link
+      description: Provide a link to the source document in this repository.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_scope
+    attributes:
+      label: Proposed Scope
+      description: What specific changes or additions will you make?
+    validations:
+      required: true
+  - type: textarea
+    id: technical_terms
+    attributes:
+      label: Technical Terms
+      description: List any technical terms that should remain unchanged (in English).
+    validations:
+      required: false
+  - type: checkboxes
+    id: preservation_checks
+    attributes:
+      label: Preservation and Meaning
+      description: Please confirm the following guidelines.
+      options:
+        - label: I confirm that links, filenames, and code blocks will be preserved unless intentionally changed.
+          required: true
+        - label: I confirm that technical meaning is preserved in the translation.
+          required: true
+        - label: I confirm that Jules remains described as an AI coding agent, not a human contributor.
+          required: true

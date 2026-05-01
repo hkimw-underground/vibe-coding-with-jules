@@ -29,7 +29,7 @@ If you are an educator, your feedback can improve the learning path for classroo
 We welcome translators and international contributors who want to make this starter kit useful beyond English and Korean readers.
 
 - **Translation PR flow:** English (`.md`) is the source language, and Korean (`.ko.md`) is currently maintained as a companion language.
-- **First contribution idea:** Review the [Translation Guide](./translations.md), then open an issue proposing a translation for `docs/quickstart.md` or one operation guide.
+- **First contribution idea:** Review the [Translation Guide](./translations.md), then open an issue using the [Translation Issue Template](../../.github/ISSUE_TEMPLATE/translation.yml) proposing a translation for `docs/quickstart.md` or one operation guide.
 
 ### For Documentation Contributors
 
