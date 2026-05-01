@@ -120,6 +120,7 @@ jobs:
             "docs/quickstart.md"
             "docs/operations/one-jules-task-at-a-time.md"
             "docs/operations/branch-protection-and-ci-gates.md"
+            "docs/operations/labels-and-triage.md"
             "docs/meta/project-readiness.md"
             "docs/meta/release-checklist.md"
             "docs/meta/documentation-audit.md"
