@@ -1,6 +1,6 @@
 # AI Coding Workflow Starter Kit for Jules
 
-[English](./README.md) · [한국어](./README.ko.md) · [Quickstart](./docs/quickstart.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Launch Checklist](./docs/meta/release-checklist.md) · [Contributing](./CONTRIBUTING.md) · [Security](./SECURITY.md)
+[English](./README.md) · [한국어](./README.ko.md) · [Showcase](./docs/showcase.md) · [Quickstart](./docs/quickstart.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Launch Checklist](./docs/meta/release-checklist.md) · [Contributing](./CONTRIBUTING.md) · [Security](./SECURITY.md)
 
 > Most AI coding demos show only the final code.  
 > This project shows the process.
@@ -90,6 +90,7 @@ The maintainer stays responsible for scope, architecture, validation, and the fi
 
 ## Key Guides
 
+- [Showcase](./docs/showcase.md)
 - [Quickstart](./docs/quickstart.md)
 - [Jules Web UI Guide](./docs/jules-web-ui.md)
 - [First Contributions Guide](./docs/contributing/first-contributions.md)
