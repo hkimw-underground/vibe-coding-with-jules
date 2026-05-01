@@ -1,0 +1,46 @@
+<svg width="720" height="270" viewBox="0 0 720 270" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Four workflow tracks overview</title>
+  <desc id="desc">A comparison of Review-Driven, GitHub-Native Collaboration, Half Vibe Coding, and Full Vibe Coding tracks.</desc>
+  <style>
+    .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .title { font-size: 14px; font-weight: 600; }
+    .desc { font-size: 11px; }
+    .tag { font-size: 10px; font-weight: 600; }
+    .node { stroke-width: 1.5; }
+    @media (prefers-color-scheme: dark) {
+      .title, .tag { fill: #adbac7; }
+      .desc { fill: #768390; }
+      .node { fill: #22272e; stroke: #444c56; }
+    }
+    @media (prefers-color-scheme: light) {
+      .title, .tag { fill: #24292f; }
+      .desc { fill: #57606a; }
+      .node { fill: #ffffff; stroke: #d0d7de; }
+    }
+  </style>
+  <rect x="20" y="20" width="320" height="100" rx="7" class="node" />
+  <text x="40" y="48" class="text title">Review-Driven</text>
+  <text x="250" y="48" class="text tag">DEFAULT</text>
+  <text x="40" y="70" class="text desc">Issue → Jules task → PR → CI → human review</text>
+  <text x="40" y="88" class="text desc">Best for real projects, classrooms, and starter repos.</text>
+  <text x="40" y="106" class="text desc">Maintainer owns scope, validation, and merge.</text>
+
+  <rect x="380" y="20" width="320" height="100" rx="7" class="node" />
+  <text x="400" y="48" class="text title">GitHub-Native Collaboration</text>
+  <text x="400" y="70" class="text desc">Learn Issues, PRs, reviews, labels, CI, and rules.</text>
+  <text x="400" y="88" class="text desc">Best for students, teachers, and new maintainers.</text>
+  <text x="400" y="106" class="text desc">Uses the full GitHub workflow as the classroom.</text>
+
+  <rect x="20" y="150" width="320" height="100" rx="7" class="node" />
+  <text x="40" y="178" class="text title">Half Vibe Coding</text>
+  <text x="40" y="200" class="text desc">Human sets direction and checks progress periodically.</text>
+  <text x="40" y="218" class="text desc">Jules executes between checkpoints with strong CI.</text>
+  <text x="40" y="236" class="text desc">Advanced: use after review rules are established.</text>
+
+  <rect x="380" y="150" width="320" height="100" rx="7" class="node" />
+  <text x="400" y="178" class="text title">Full Vibe Coding</text>
+  <text x="610" y="178" class="text tag">EXPERIMENT</text>
+  <text x="400" y="200" class="text desc">Minimal human involvement for sandbox experiments.</text>
+  <text x="400" y="218" class="text desc">Useful for studying autonomous coding workflows.</text>
+  <text x="400" y="236" class="text desc">Not a default path for production repositories.</text>
+</svg>

@@ -9,6 +9,8 @@
 
 It is built for students, teachers, first-time maintainers, and small teams who want AI-assisted coding work to leave a readable engineering history.
 
+![Workflow overview](./docs/assets/workflow-overview.svg)
+
 This is not a prompt dump. It is a reusable starter kit for running AI-assisted work inside normal GitHub practice.
 
 ---
@@ -16,6 +18,8 @@ This is not a prompt dump. It is a reusable starter kit for running AI-assisted 
 ## Choose Your Track
 
 Pick the workflow that matches how much human involvement you want.
+
+![Four workflow tracks](./docs/assets/four-tracks-overview.svg)
 
 | Track | Best for | Human involvement | Status |
 | --- | --- | --- | --- |
@@ -36,6 +40,8 @@ Keep Full Vibe Coding in sandbox repositories or protected branches.
 ---
 
 ## Start Here
+
+![Getting started flow](./docs/assets/getting-started-flow.svg)
 
 1. Read the **[Quickstart Guide](./docs/quickstart.md)**.
 2. Copy the starter files into your repository.
@@ -132,6 +138,7 @@ Evaluator-driven experiments need measurable tests or benchmarks.
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   └── workflows/
 ├── docs/
+│   ├── assets/
 │   ├── quickstart.md
 │   ├── case-studies/
 │   ├── experiments/
