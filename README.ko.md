@@ -48,6 +48,7 @@ graph LR
 - **[Quickstart 가이드](./docs/quickstart.md)** — 단계별 온보딩
 - **[운영 가이드](./docs/operations/one-jules-task-at-a-time.md)** — 안전한 태스크 순차 실행
 - **[브랜치 보호 가이드](./docs/operations/branch-protection-and-ci-gates.md)** — CI 게이트와 `main` 보호
+- **[라벨 및 트리아지 가이드](./docs/operations/labels-and-triage.md)** — AI 태스크 정리
 
 ### 1. Starter Kit 파일 복사하기
 
@@ -139,7 +140,8 @@ Merge 전에 다음을 확인합니다.
 │   │   └── documentation-audit.md
 │   ├── operations/
 │   │   ├── one-jules-task-at-a-time.md
-│   │   └── branch-protection-and-ci-gates.md
+│   │   ├── branch-protection-and-ci-gates.md
+│   │   └── labels-and-triage.md
 │   ├── workflows/
 │   │   └── workflow-levels.md
 │   ├── experiments/
