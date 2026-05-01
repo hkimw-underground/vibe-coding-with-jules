@@ -91,6 +91,7 @@ The maintainer stays responsible for scope, architecture, validation, and the fi
 ## Key Guides
 
 - [Quickstart](./docs/quickstart.md)
+- [First Contributions Guide](./docs/contributing/first-contributions.md)
 - [Jules Web UI Guide](./docs/jules-web-ui.md)
 - [Translation Guide](./docs/contributing/translations.md)
 - [One Jules Task at a Time](./docs/operations/one-jules-task-at-a-time.md)

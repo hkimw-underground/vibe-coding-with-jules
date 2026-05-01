@@ -40,6 +40,10 @@ A good Jules task is scoped and specific. Avoid vague requests like "improve the
 
 We explicitly welcome translation contributors to help make this starter kit accessible to a global audience. If you are interested in contributing translations, please see our **[Translation Guide](./docs/contributing/translations.md)**.
 
+## First Contributions
+
+If you are new to the project or looking for a way to get started, please see our **[First Contributions Guide](./docs/contributing/first-contributions.md)**. It includes specific advice for students, teachers, translators, and developers.
+
 ## Documentation Standards
 
 ### Multi-language Support
