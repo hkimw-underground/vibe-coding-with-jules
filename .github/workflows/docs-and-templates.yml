@@ -120,6 +120,7 @@ jobs:
             ".github/ISSUE_TEMPLATE/translation.yml"
             "docs/quickstart.md"
             "docs/showcase.md"
+            "docs/share-kit.md"
             "docs/jules-web-ui.md"
             "docs/contributing/first-contributions.md"
             "docs/contributing/translations.md"
