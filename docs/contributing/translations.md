@@ -1,6 +1,6 @@
 # Translation Guide
 
-We explicitly welcome translation contributors to help make the AI Coding Workflow Starter Kit accessible to a global audience.
+We welcome translation contributors who want to make the AI Coding Workflow Starter Kit easier to use across languages.
 
 ## Translation Principles
 
@@ -30,6 +30,6 @@ If you are looking to contribute a translation, here are some recommended starti
 1. **Translate the Quickstart Guide:** Help new users get started by translating `docs/quickstart.md`.
 2. **Translate Operations Guides:** Choose a guide from `docs/operations/` and provide a translated version.
 3. **Audit Existing Translations:** Review `README.ko.md` and suggest improvements for clarity or accuracy.
-4. **Propose a New Language:** If you would like to translate the starter kit into a new language, please open an issue first to discuss the structure (e.g., using `.es.md`, `.fr.md`, etc.).
+4. **Propose a New Language:** If you would like to translate the starter kit into a new language, please [open a translation issue](../../.github/ISSUE_TEMPLATE/translation.yml) first to discuss the structure (e.g., using `.es.md`, `.fr.md`, etc.).
 
-Thank you for helping us reach more developers!
+Translation work should keep the workflow accurate, reviewable, and useful for maintainers in different language communities.

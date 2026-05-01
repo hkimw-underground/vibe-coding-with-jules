@@ -1,0 +1,72 @@
+name: Translation
+about: Propose a new translation or improve an existing one
+title: "[Translation] "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping make this project accessible. Please refer to the [Translation Guide](../../docs/contributing/translations.md) before submitting.
+
+        Contributors are not required to use Jules. Jules should remain described as an AI coding agent, not a human contributor.
+  - type: input
+    id: language
+    attributes:
+      label: Target Language
+      placeholder: e.g., Spanish, French, Japanese, etc.
+    validations:
+      required: true
+  - type: input
+    id: document
+    attributes:
+      label: Document or Section
+      placeholder: e.g., docs/quickstart.md, README.md, or a specific section
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Translation Type
+      options:
+        - New translation
+        - Improvement to an existing translation
+    validations:
+      required: true
+  - type: input
+    id: source_link
+    attributes:
+      label: Source Document Link
+      placeholder: Link to the English version of the document
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed Scope
+      description: What exactly are you planning to translate or improve?
+    validations:
+      required: true
+  - type: textarea
+    id: technical_terms
+    attributes:
+      label: Technical Terms
+      description: List any technical terms that should remain unchanged in the target language.
+      placeholder: e.g., Jules, PR, CI, etc.
+  - type: checkboxes
+    id: preservation
+    attributes:
+      label: Preservation of technical structure
+      options:
+        - label: I have preserved all relative links and filenames.
+          required: true
+        - label: I have kept code blocks, terminal commands, and configuration snippets unchanged, except for comments if necessary.
+          required: true
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Translation Principles
+      options:
+        - label: I confirm that Jules is described as an AI coding agent, not a human contributor.
+          required: true
+        - label: I have preserved the technical meaning and engineering practices of the original text.
+          required: true
