@@ -93,6 +93,7 @@ The maintainer stays responsible for scope, architecture, validation, and the fi
 
 - [Quickstart](./docs/quickstart.md)
 - [Showcase](./docs/showcase.md)
+- [Share Kit](./docs/share-kit.md)
 - [Jules Web UI Guide](./docs/jules-web-ui.md)
 - [First Contributions Guide](./docs/contributing/first-contributions.md)
 - [Translation Guide](./docs/contributing/translations.md)
@@ -149,6 +150,7 @@ Evaluator-driven experiments need measurable tests or benchmarks.
 │   │   └── translations.md
 │   ├── jules-web-ui.md
 │   ├── quickstart.md
+│   ├── share-kit.md
 │   ├── showcase.md
 │   ├── case-studies/
 │   ├── experiments/
