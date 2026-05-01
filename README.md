@@ -1,6 +1,6 @@
 # AI Coding Workflow Starter Kit for Jules
 
-[English](./README.md) · [한국어](./README.ko.md) · [Quickstart](./docs/quickstart.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Launch Checklist](./docs/meta/release-checklist.md) · [Contributing](./CONTRIBUTING.md) · [Security](./SECURITY.md)
+[English](./README.md) · [한국어](./README.ko.md) · [Quickstart](./docs/quickstart.md) · [Showcase](./docs/showcase.md) · [Project Readiness](./docs/meta/project-readiness.md) · [Launch Checklist](./docs/meta/release-checklist.md) · [Contributing](./CONTRIBUTING.md) · [Security](./SECURITY.md)
 
 > Most AI coding demos show only the final code.  
 > This project shows the process.
@@ -44,10 +44,11 @@ Keep Full Vibe Coding in sandbox repositories or protected branches.
 ![Getting started flow](./docs/assets/getting-started-flow.svg)
 
 1. Read the **[Quickstart Guide](./docs/quickstart.md)**.
-2. Copy the starter files into your repository.
-3. Open a small GitHub Issue.
-4. Let Jules create a focused pull request.
-5. Review the PR, check CI, and merge only when the maintainer is satisfied.
+2. See the **[copy-first showcase](./docs/showcase.md)**.
+3. Copy the starter files into your repository.
+4. Open a small GitHub Issue.
+5. Let Jules create a focused pull request.
+6. Review the PR, check CI, and merge only when the maintainer is satisfied.
 
 Starter files to copy first:
 
@@ -91,6 +92,7 @@ The maintainer stays responsible for scope, architecture, validation, and the fi
 ## Key Guides
 
 - [Quickstart](./docs/quickstart.md)
+- [Showcase](./docs/showcase.md)
 - [Jules Web UI Guide](./docs/jules-web-ui.md)
 - [First Contributions Guide](./docs/contributing/first-contributions.md)
 - [Translation Guide](./docs/contributing/translations.md)
@@ -147,6 +149,7 @@ Evaluator-driven experiments need measurable tests or benchmarks.
 │   │   └── translations.md
 │   ├── jules-web-ui.md
 │   ├── quickstart.md
+│   ├── showcase.md
 │   ├── case-studies/
 │   ├── experiments/
 │   ├── meta/
