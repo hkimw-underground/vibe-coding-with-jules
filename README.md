@@ -141,6 +141,8 @@ Evaluator-driven experiments need measurable tests or benchmarks.
 │   └── workflows/
 ├── docs/
 │   ├── assets/
+│   ├── contributing/
+│   ├── jules-web-ui.md
 │   ├── quickstart.md
 │   ├── case-studies/
 │   ├── experiments/
