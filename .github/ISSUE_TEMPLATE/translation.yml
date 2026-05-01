@@ -6,9 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for helping make this project accessible. Please refer to the [Translation Guide](../../docs/contributing/translations.md) before submitting.
+        Thank you for helping make this project accessible! Please refer to the [Translation Guide](../../docs/contributing/translations.md) before submitting.
 
-        Contributors are not required to use Jules. Jules should remain described as an AI coding agent, not a human contributor.
+        **Note:** Contributors are not required to use Jules for translation work.
   - type: input
     id: language
     attributes:
@@ -59,7 +59,7 @@ body:
       options:
         - label: I have preserved all relative links and filenames.
           required: true
-        - label: I have kept code blocks, terminal commands, and configuration snippets unchanged, except for comments if necessary.
+        - label: I have kept code blocks, terminal commands, and configuration snippets unchanged (except for comments if necessary).
           required: true
   - type: checkboxes
     id: principles
