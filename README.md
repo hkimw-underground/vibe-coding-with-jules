@@ -97,6 +97,7 @@ The maintainer stays responsible for scope, architecture, validation, and the fi
 - [First Contributions Guide](./docs/contributing/first-contributions.md)
 - [Translation Guide](./docs/contributing/translations.md)
 - [Public Share Kit](./docs/share-kit.md)
+- [Applied Repository Rollout](./docs/operations/apply-to-existing-repo.md)
 - [One Jules Task at a Time](./docs/operations/one-jules-task-at-a-time.md)
 - [Branch Protection and CI Gates](./docs/operations/branch-protection-and-ci-gates.md)
 - [Labels and Triage](./docs/operations/labels-and-triage.md)
@@ -156,6 +157,10 @@ Evaluator-driven experiments need measurable tests or benchmarks.
 │   ├── experiments/
 │   ├── meta/
 │   ├── operations/
+│   │   ├── apply-to-existing-repo.md
+│   │   ├── branch-protection-and-ci-gates.md
+│   │   ├── labels-and-triage.md
+│   │   └── one-jules-task-at-a-time.md
 │   ├── tracks/
 │   └── workflows/
 ├── examples/

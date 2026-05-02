@@ -6,6 +6,8 @@ Repository: `hkimw-underground/digital-logic-circuit`
 
 The `digital-logic-circuit` repository is a real-world hardware and software capstone project. It serves as a case study for integrating an AI coding agent, Jules, into a standard GitHub development workflow.
 
+For a step-by-step guide on how to integrate this workflow into your own project, see the [Applied Repository Rollout](../operations/apply-to-existing-repo.md) guide. Lessons learned from rolling out the workflow in this case study are fed back into the starter kit to improve that guide.
+
 ## Why This is a Good Case Study
 
 Unlike simple, isolated software experiments, a capstone project involves external constraints, complex architectures, and concrete milestones. Demonstrating the workflow here shows how the GitHub-native Issue → PR → Review → CI process can work for a structured project while keeping engineering review visible.

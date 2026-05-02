@@ -124,6 +124,7 @@ jobs:
             "docs/jules-web-ui.md"
             "docs/contributing/first-contributions.md"
             "docs/contributing/translations.md"
+            "docs/operations/apply-to-existing-repo.md"
             "docs/operations/one-jules-task-at-a-time.md"
             "docs/operations/branch-protection-and-ci-gates.md"
             "docs/operations/labels-and-triage.md"
