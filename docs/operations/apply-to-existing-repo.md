@@ -1,54 +1,158 @@
 # Applied Repository Rollout
 
-The AI Coding Workflow Starter Kit for Jules is designed to be copied into existing repositories. This guide explains how to roll out the starter kit to a real, ongoing project.
+The AI Coding Workflow Starter Kit for Jules is designed to be adapted into existing repositories. This guide explains how to roll out the starter kit to a real, ongoing project without confusing the playbook repository with the applied case study.
 
-We use `hkimw-underground/digital-logic-circuit` as the motivating example for this guide. That repository is [Case Study A](../case-studies/digital-logic-circuit.md) — a real hardware and software capstone project. While `digital-logic-circuit` is the specific case study demonstrating the workflow in action, `vibe-coding-with-jules` remains the reusable template and playbook for any project. Lessons learned from the applied case study are brought back to improve this starter kit.
+We use `hkimw-underground/digital-logic-circuit` as the motivating example for this guide. That repository is [Case Study A](../case-studies/digital-logic-circuit.md): a real hardware/software capstone project. `digital-logic-circuit` demonstrates the workflow in action, while `vibe-coding-with-jules` remains the reusable hub and playbook.
 
-## The Rollout Process
+Lessons learned from the applied case study should be brought back to improve this starter kit only after they are proven through issues, PRs, CI checks, and human review.
+
+## Rollout process
 
 Do not copy every file from the starter kit at once. Start small, verify the workflow, and expand as needed.
 
 ### 1. Audit current repo state
-Before adding the starter kit, check your repository's baseline:
+
+Before adding the starter kit, check the repository baseline:
+
 - Is there a clear `README.md` explaining the project?
-- Are there existing linting or test scripts?
+- Are there existing linting, test, or documentation checks?
 - What are the current branch protection rules?
+- Which files are high-risk or frequently changed?
+- Which areas require human judgment, hardware access, or security review?
 
 ### 2. Copy starter files
-Copy only the essential files to establish the workflow boundary:
-- `AGENTS.md`
-- `.github/ISSUE_TEMPLATE/jules_task.yml`
-- `.github/PULL_REQUEST_TEMPLATE.md`
+
+Copy only the essential files needed to establish the workflow boundary:
+
+```text
+AGENTS.md
+.github/ISSUE_TEMPLATE/jules_task.yml
+.github/ISSUE_TEMPLATE/workflow_experiment.yml
+.github/PULL_REQUEST_TEMPLATE.md
+.github/workflows/docs-and-templates.yml
+docs/jules-workflow.md
+```
+
+You can add prompts and examples later after the first setup PR proves that the workflow works.
 
 ### 3. Adapt `AGENTS.md` to the repo domain
-`AGENTS.md` is the primary rulebook for Jules. You must customize it for your project's specific context.
-For example, in `digital-logic-circuit`, the `AGENTS.md` must be updated to clarify that Jules is not allowed to modify hardware simulation schematics without explicit test coverage, or that Python scripts must target a specific hardware environment.
+
+`AGENTS.md` is the primary rulebook for Jules. Customize it for the project's specific context.
+
+For `digital-logic-circuit`, the file should explain that:
+
+- the repository is a hardware/software capstone project
+- Jules is an AI coding agent, not a human contributor
+- the human maintainer owns hardware judgment, architecture, security, validation, review, and merge decisions
+- changes to authentication, lock/unlock behavior, camera handling, model loading, GPIO, and fail-safe behavior require careful human review
+
+For other repositories, replace those domain rules with the equivalent high-risk areas in that project.
 
 ### 4. Add issue templates
-Ensure `.github/ISSUE_TEMPLATE/jules_task.yml` is in place. This enforces that every Jules task starts with a clear, scoped GitHub Issue written by a human maintainer.
 
-### 5. Add PR template
-The `.github/PULL_REQUEST_TEMPLATE.md` ensures that Jules links back to the motivating issue and includes validation notes. This keeps human review focused.
+Add `.github/ISSUE_TEMPLATE/jules_task.yml` so Jules tasks start from scoped GitHub Issues.
+
+A good issue should include:
+
+- Goal
+- Context
+- Scope
+- Non-goals
+- Risk areas
+- Acceptance Criteria
+- Validation
+- Output Required
+
+### 5. Add a PR template
+
+Add `.github/PULL_REQUEST_TEMPLATE.md` so every PR asks for:
+
+- linked issue
+- summary
+- scope check
+- validation notes
+- maintainer review focus
+- AI-agent disclosure when Jules assisted the work
 
 ### 6. Add lightweight CI
-Jules needs fast feedback. Add a minimal GitHub Actions workflow to check formatting or run basic tests.
-If your repository doesn't have tests yet, start with something simple like syntax checking.
+
+Add a small GitHub Actions workflow first. The goal is fast feedback, not heavy automation.
+
+A good first CI workflow checks:
+
+- YAML syntax
+- Markdown hygiene
+- required workflow files
+
+For code-heavy repositories, add tests only when the expected test command is already clear.
 
 ### 7. Create the first Jules setup issue
-Open a small, low-risk GitHub Issue. Good first issues include:
-- "Add a standard `.gitignore` for the project."
-- "Format all Python files using `black`."
-- "Write a basic unit test for an existing utility function."
+
+Open a small, low-risk issue that installs or verifies the workflow.
+
+Good first setup issues include:
+
+- install the Jules workflow starter kit
+- add or refine `docs/jules-workflow.md`
+- validate Markdown and YAML workflow files
+- document which areas require human hardware or security review
+
+Avoid starting with broad code refactors or behavior changes.
 
 ### 8. Run the first Jules PR
-Assign the issue to Jules. Jules, acting as an AI coding agent, will read the issue and create a small, focused Pull Request.
+
+Use the setup issue as the source of truth. Jules should create a small, focused PR.
+
+During the first PR, check:
+
+- whether Jules followed `AGENTS.md`
+- whether the PR stayed in scope
+- whether unrelated files were avoided
+- whether validation notes are present
+- whether CI passed
 
 ### 9. Review and merge
+
 The human maintainer reviews the PR.
-- Did Jules follow the scope?
+
+Before merge, check:
+
+- Did Jules follow the issue?
 - Did CI pass?
-- Does the architecture still align with the project goals?
-Merge only when satisfied. The maintainer retains full ownership.
+- Are the domain-specific safety rules still correct?
+- Are there hardware, security, or deployment assumptions that need manual review?
+- Is Jules framed as an AI coding agent rather than a human contributor?
+
+Merge only when the maintainer is satisfied.
 
 ### 10. Feed lessons back into the starter kit
-As you run more tasks, you will find gaps. Update your local `AGENTS.md` or issue templates. If a workflow improvement is generally useful (like a better PR review prompt), bring that lesson back to the main starter kit repository.
+
+As the applied repository starts using Jules, keep notes about what worked and what was confusing.
+
+Feed lessons back into `vibe-coding-with-jules` when they are generally useful, such as:
+
+- better issue template wording
+- stronger review checklist items
+- clearer CI guidance
+- safer language for hardware or security projects
+- practical examples from real PR reviews
+
+## What not to do
+
+Do not treat an applied case study as the generic template. A case study contains project-specific assumptions.
+
+Do not treat the starter kit as a replacement for human review.
+
+Do not present Jules as a human contributor.
+
+Do not start with autonomous workflows in production repositories.
+
+## Summary
+
+The rollout path is:
+
+```text
+Audit repo → copy minimal starter files → adapt AGENTS.md → open setup issue → Jules PR → CI → human review → merge → feed lessons back
+```
+
+This keeps the workflow practical, reviewable, and reusable across projects.
