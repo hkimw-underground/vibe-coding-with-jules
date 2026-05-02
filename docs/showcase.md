@@ -68,6 +68,6 @@ Translation contributors are welcome. Keep technical meaning, links, filenames, 
 
 ## Next step
 
-Read the [Quickstart Guide](./quickstart.md), copy the starter files you need, and open one small issue before asking Jules to work.
+Read the [Quickstart Guide](./quickstart.md) or the [Applied Repository Rollout Guide](./operations/apply-to-existing-repo.md), copy the starter files you need, and open one small issue before asking Jules to work.
 
 Jules is an AI coding agent, not a human contributor. Human maintainers remain responsible for review, validation, and merge decisions.

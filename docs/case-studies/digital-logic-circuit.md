@@ -10,6 +10,8 @@ The `digital-logic-circuit` repository is a real-world hardware and software cap
 
 Unlike simple, isolated software experiments, a capstone project involves external constraints, complex architectures, and concrete milestones. Demonstrating the workflow here shows how the GitHub-native Issue → PR → Review → CI process can work for a structured project while keeping engineering review visible.
 
+This project serves as the real-world application of the [Applied Repository Rollout Guide](../operations/apply-to-existing-repo.md).
+
 ## Project Planning and GitHub Issues
 
 Historically, project planning for this capstone might have relied on external trackers or ad-hoc communication. To enable the AI-assisted workflow, planning has been explicitly moved into GitHub Issues.
