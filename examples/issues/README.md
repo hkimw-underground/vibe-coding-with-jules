@@ -14,6 +14,7 @@ Jules performs best when the problem and scope are clearly defined. A well-scope
 - [Documentation Task](./docs-task.md): Adding or updating documentation.
 - [CI/Tooling Task](./ci-task.md): Modifying GitHub Actions or local scripts.
 - [Scoped Refactor Task](./refactor-task.md): Cleaning up code without changing behavior.
+- [README Role Separation Task](./readme-role-separation.md): Clarifying ecosystem roles in the Hub README.
 
 ## How to Use These Examples
 
