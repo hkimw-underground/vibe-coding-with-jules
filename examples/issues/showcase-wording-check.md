@@ -1,4 +1,4 @@
-# [Jules Task] Fleet wave 10-2: showcase copy-first wording check
+# [Jules Task #FLEET-WAVE-010-2] Fleet wave 10-2: showcase copy-first wording check
 
 ## Problem
 The `docs/showcase.md` file describes the "copy-first" reusable starter files. We must ensure it maintains the correct role separation: this repository is the **Hub and Playbook**, while providing files that can be copied to other repositories (or will eventually power the dedicated template repository). It should not be confused for the template repository itself.
