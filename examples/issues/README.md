@@ -20,6 +20,7 @@ Jules performs best when the problem and scope are clearly defined. A well-scope
 - [Lightweight CI Task](./lightweight-ci-task.md): Adding minimal docs and template validation.
 - [Case Study B Task](./case-study-b-task.md): Initializing an English-only sample project.
 - [README Role Separation Task](./readme-role-separation.md): Improving top-level role separation for the Hub, Template, and Case Studies.
+- [Fleet Continuous Smoke Task](./fleet-cont-smoke-005-1.md): A small wording check task for validating Fleet pop-and-dispatch behavior.
 
 ## How to Use These Examples
 
