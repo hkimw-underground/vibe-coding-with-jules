@@ -17,11 +17,11 @@
 
 ## 한 개의 저장소, 세 가지 역할
 
-이 저장소는 여러분이 AI-assisted coding을 도입하는 데 도움이 되도록 세 가지 뚜렷한 목적으로 운영됩니다:
+이 저장소는 AI-assisted coding을 위한 중앙 **Hub이자 Playbook**이며, 각 기능 사이의 명확한 경계를 유지하며 운영됩니다:
 
-1.  **[Hub / Playbook](./docs/quickstart.md)**: GitHub-native Jules workflow를 배우기 위한 중앙 거점입니다. 트랙, 운영, 안전에 관한 가이드를 제공합니다.
-2.  **[Starter Kit](./docs/showcase.md)**: 새로운 저장소에 바로 적용할 수 있는 "copy-first" 파일들(`AGENTS.md`, template, prompt)의 모음입니다.
-3.  **[Case Studies](./docs/case-studies/)**: 다양한 도메인에서 이 workflow가 실제로 작동하는 것을 보여주는 증거와 계획된 프로젝트들입니다.
+1.  **[Hub / Playbook](./docs/quickstart.md)**: GitHub-native Jules workflow를 배우기 위한 결정적인 거점입니다. 트랙, 운영, 안전에 관한 가이드를 제공합니다.
+2.  **[재사용 가능한 Starter File](./docs/showcase.md)**: 새로운 프로젝트에 바로 적용할 수 있는 이 저장소의 "copy-first" 파일들(`AGENTS.md`, template, prompt)의 모음입니다. 이 파일들은 향후 전용 템플릿 저장소인 **[jules-workflow-template](https://github.com/google-labs/jules-workflow-template)**의 기반이 됩니다.
+3.  **[Case Studies](./docs/case-studies/)**: **[Case Study A: Digital Logic Circuit](./docs/case-studies/digital-logic-circuit.md)**와 같이 이 workflow가 실제로 작동하는 것을 보여주는 실제 사례들입니다.
 
 ---
 
