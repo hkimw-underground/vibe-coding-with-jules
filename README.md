@@ -20,7 +20,7 @@ This is not a prompt dump. It is a reusable starter kit for running AI-assisted 
 This repository serves as the central **Hub and Playbook** for AI-assisted coding, while maintaining clear boundaries between its different functions:
 
 1.  **[The Hub / Playbook](./docs/quickstart.md)**: The definitive place for learning the GitHub-native Jules workflow, featuring guides on tracks, operations, and safety.
-2.  **[Reusable Starter Files](./docs/showcase.md)**: A collection of "copy-first" files (`AGENTS.md`, templates, prompts) found in this repo that you can drop into any new project. These files also power the future dedicated **[jules-workflow-template](https://github.com/google-labs/jules-workflow-template)** repository.
+2.  **[Reusable Starter Files](./docs/showcase.md)**: A collection of "copy-first" files (`AGENTS.md`, templates, prompts) found in this repo that you can drop into any new project. These files also power the future dedicated **[jules-workflow-template](https://github.com/hkimw-underground/jules-workflow-template)** repository.
 3.  **[The Case Studies](./docs/case-studies/)**: Real-world evidence, such as **[Case Study A: Digital Logic Circuit](./docs/case-studies/digital-logic-circuit.md)**, showing the workflow in action.
 
 ---
