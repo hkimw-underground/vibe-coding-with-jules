@@ -14,6 +14,7 @@ Jules performs best when the problem and scope are clearly defined. A well-scope
 - [Documentation Task](./docs-task.md): Adding or updating documentation.
 - [CI/Tooling Task](./ci-task.md): Modifying GitHub Actions or local scripts.
 - [Scoped Refactor Task](./refactor-task.md): Cleaning up code without changing behavior.
+- [Case Study B Planning](./case-study-b-planning/selection-criteria.md): Defining criteria for an English-only project.
 
 ## How to Use These Examples
 
