@@ -15,6 +15,16 @@ This is not a prompt dump. It is a reusable starter kit for running AI-assisted 
 
 ---
 
+## One Repository, Three Roles
+
+This repository serves three distinct purposes to help you adopt AI-assisted coding:
+
+1.  **[The Hub / Playbook](./docs/quickstart.md)**: The central place for learning the GitHub-native Jules workflow, featuring guides on tracks, operations, and safety.
+2.  **[The Starter Kit](./docs/showcase.md)**: A collection of "copy-first" files (`AGENTS.md`, templates, prompts) designed to be dropped into any new repository.
+3.  **[The Case Studies](./docs/case-studies/)**: Real-world evidence and planned projects showing the workflow in action across different domains.
+
+---
+
 ## Choose Your Track
 
 Pick the workflow that matches how much human involvement you want.
