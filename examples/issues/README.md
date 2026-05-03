@@ -15,6 +15,10 @@ Jules performs best when the problem and scope are clearly defined. A well-scope
 - [CI/Tooling Task](./ci-task.md): Modifying GitHub Actions or local scripts.
 - [Scoped Refactor Task](./refactor-task.md): Cleaning up code without changing behavior.
 - [Template AGENTS Task](./template-agents-task.md): Drafting minimal rules for a template repository.
+- [Template README Task](./template-readme-task.md): Drafting a copy-first README for a new repository.
+- [Minimal PR Template Task](./pr-template-task.md): Drafting a reusable PR template.
+- [Lightweight CI Task](./lightweight-ci-task.md): Adding minimal docs and template validation.
+- [Case Study B Task](./case-study-b-task.md): Initializing an English-only sample project.
 
 ## How to Use These Examples
 
