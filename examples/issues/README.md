@@ -18,6 +18,7 @@ Jules performs best when the problem and scope are clearly defined. A well-scope
 - [Template README Task](./template-readme-task.md): Drafting a copy-first README for a new repository.
 - [Minimal PR Template Task](./pr-template-task.md): Drafting a reusable PR template.
 - [Lightweight CI Task](./lightweight-ci-task.md): Adding minimal docs and template validation.
+- [Case Study A Wording Check](./case-study-a-wording-check.md): Verifying the Case Study A framing.
 - [Case Study B Task](./case-study-b-task.md): Initializing an English-only sample project.
 - [README Role Separation Task](./readme-role-separation.md): Improving top-level role separation for the Hub, Template, and Case Studies.
 
