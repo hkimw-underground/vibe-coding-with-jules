@@ -24,6 +24,8 @@ Concurrent Jules tasks are safe when the tasks modify **strictly disjoint** area
 
 If you are confident the files will not overlap, you can run them simultaneously. If there is any risk of overlap (like adding to a shared list of links in the `README`), queue the tasks.
 
+> **Operational Note for Fleet Mode:** When testing automated queueing (Fleet Mode), keep initial tests small (e.g., 1-2 tasks) to verify state accounting and labeling flows before scaling to larger batches.
+
 ## Managing Issue Labels
 
 To sequence tasks effectively using labels like `run-jules`:
